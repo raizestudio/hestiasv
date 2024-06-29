@@ -1,0 +1,24 @@
+# DB
+*.db
+*.sqlite3
+
+# Django
+migrations
+static
+media
+
+# Python
+__pycache__
+*.log
+*.pyc
+*.pyo
+*.pyd
+
+# Env
+*.env
+venv
+
+# IDE
+*.idea
+*.vscode
+*.DS_Store
