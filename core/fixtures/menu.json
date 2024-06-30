@@ -1,9 +1,42 @@
 [
   {
     "model": "core.menu",
-    "id": 1,
+    "pk": 1,
     "fields": {
-      "name": "Configuration",
+      "name": "Demandes",
+      "description": "Menu demandes de service",
+      "url": "/orders",
+      "order": 1,
+      "icon": "ConfigurationWheelIcon"
+    }
+  },
+  {
+    "model": "core.menu",
+    "pk": 2,
+    "fields": {
+      "name": "Missions",
+      "description": "Menu demandes de service",
+      "url": "/missions",
+      "order": 1,
+      "icon": "ConfigurationWheelIcon"
+    }
+  },
+  {
+    "model": "core.menu",
+    "pk": 3,
+    "fields": {
+      "name": "Administration",
+      "description": "Menu administration",
+      "url": "/administration",
+      "order": 1,
+      "icon": "ConfigurationWheelIcon"
+    }
+  },
+  {
+    "model": "core.menu",
+    "pk": 4,
+    "fields": {
+      "name": "Paramètres",
       "description": "Menu configuration",
       "url": "/configuration",
       "order": 1,

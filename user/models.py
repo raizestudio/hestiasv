@@ -9,7 +9,7 @@ class User(AbstractUser):
     avatar = models.ImageField(_("Avatar"), upload_to="users/avatars/", blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    groups = models.ManyToManyField("authentication.Group", related_name="user_groups", blank=True)
+    groups = models.ManyToManyField("user.Group", related_name="user_groups", blank=True)
 
     def __str__(self):
         return self.email
@@ -49,3 +49,32 @@ class UserSecurity(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Group(models.Model):
+    """Model for storing user groups"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+    description = models.TextField(_("Description"))
+
+    class Meta:
+        verbose_name = _("Groupe utilisateur")
+        verbose_name_plural = _("Groupes utilisateurs")
+
+    def __str__(self):
+        return self.name
+
+
+class Role(models.Model):
+    """Model for storing roles"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+    description = models.TextField(_("Description"))
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("Rôle")
+        verbose_name_plural = _("Rôles")
+
+    def __str__(self):
+        return self.name

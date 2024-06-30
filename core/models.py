@@ -11,8 +11,8 @@ class Menu(models.Model):
     url = models.CharField(_("Lien"), max_length=255)
     order = models.IntegerField(_("Ordre"), default=0)
 
-    groups = models.ManyToManyField("authentication.Group", related_name="menu_groups", blank=True)
-    roles = models.ManyToManyField("authentication.Role", related_name="menu_roles", blank=True)
+    groups = models.ManyToManyField("user.Group", related_name="menu_groups", blank=True)
+    roles = models.ManyToManyField("user.Role", related_name="menu_roles", blank=True)
 
     class Meta:
         verbose_name = "Menu"
@@ -33,8 +33,8 @@ class MenuItem(models.Model):
 
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
 
-    groups = models.ManyToManyField("authentication.Group", related_name="menu_items_groups", blank=True)
-    roles = models.ManyToManyField("authentication.Role", related_name="menu_items_roles", blank=True)
+    groups = models.ManyToManyField("user.Group", related_name="menu_items_groups", blank=True)
+    roles = models.ManyToManyField("user.Role", related_name="menu_items_roles", blank=True)
 
     class Meta:
         verbose_name = _("Élément de menu")
