@@ -102,3 +102,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "user.User"
 
 CORS_ALLOW_ALL_ORIGINS = True  # FIXME: temporary
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
