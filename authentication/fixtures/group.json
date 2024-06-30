@@ -1,0 +1,34 @@
+[
+  {
+    "model": "authentication.group",
+    "pk": 1,
+    "fields": {
+      "name": "admin",
+      "description": "Administrateur"
+    }
+  },
+  {
+    "model": "authentication.group",
+    "pk": 2,
+    "fields": {
+      "name": "user",
+      "description": "Utilisateur"
+    }
+  },
+  {
+    "model": "authentication.group",
+    "pk": 3,
+    "fields": {
+      "name": "agency",
+      "description": "Agence"
+    }
+  },
+  {
+    "model": "authentication.group",
+    "pk": 4,
+    "fields": {
+      "name": "pro",
+      "description": "Professionnel"
+    }
+  }
+]

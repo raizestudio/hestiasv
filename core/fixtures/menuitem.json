@@ -1,0 +1,14 @@
+[
+  {
+    "model": "core.menuitem",
+    "id": 1,
+    "fields": {
+      "name": "Devis",
+      "description": "Menu configuration",
+      "order": 1,
+      "menu": 1,
+      "url": "/configuration/quotation",
+      "icon": ""
+    }
+  }
+]
