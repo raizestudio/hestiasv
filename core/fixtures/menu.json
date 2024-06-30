@@ -1,0 +1,13 @@
+[
+  {
+    "model": "core.menu",
+    "id": 1,
+    "fields": {
+      "name": "Configuration",
+      "description": "Menu configuration",
+      "url": "/configuration",
+      "order": 1,
+      "icon": "ConfigurationWheelIcon"
+    }
+  }
+]
