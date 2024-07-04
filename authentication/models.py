@@ -73,30 +73,3 @@ class Session(models.Model):
         return str(uuid.uuid4())
 
 
-class Group(models.Model):
-    """Model for storing user groups"""
-
-    name = models.CharField(_("Nom"), max_length=255)
-    description = models.TextField(_("Description"))
-
-    class Meta:
-        verbose_name = _("Groupe utilisateur")
-        verbose_name_plural = _("Groupes utilisateurs")
-
-    def __str__(self):
-        return self.name
-
-
-class Role(models.Model):
-    """Model for storing roles"""
-
-    name = models.CharField(_("Nom"), max_length=255)
-    description = models.TextField(_("Description"))
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = _("Rôle")
-        verbose_name_plural = _("Rôles")
-
-    def __str__(self):
-        return self.name

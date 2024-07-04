@@ -1,0 +1,107 @@
+[
+  {
+    "model": "geosys.streetlabel",
+    "pk": 1,
+    "fields": {
+      "name": "Rue"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 2,
+    "fields": {
+      "name": "Avenue"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 3,
+    "fields": {
+      "name": "Boulevard"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 4,
+    "fields": {
+      "name": "Impasse"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 5,
+    "fields": {
+      "name": "Place"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 6,
+    "fields": {
+      "name": "Route"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 7,
+    "fields": {
+      "name": "Chemin"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 8,
+    "fields": {
+      "name": "Allée"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 9,
+    "fields": {
+      "name": "Rond-Point"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 10,
+    "fields": {
+      "name": "Chaussée"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 11,
+    "fields": {
+      "name": "Cours"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 12,
+    "fields": {
+      "name": "Quai"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 13,
+    "fields": {
+      "name": "Passage"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 14,
+    "fields": {
+      "name": "Promenade"
+    }
+  },
+  {
+    "model": "geosys.streetlabel",
+    "pk": 15,
+    "fields": {
+      "name": "Rue des"
+    }
+  }
+]

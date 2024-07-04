@@ -1,6 +1,6 @@
 [
   {
-    "model": "authentication.group",
+    "model": "user.group",
     "pk": 1,
     "fields": {
       "name": "admin",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "authentication.group",
+    "model": "user.group",
     "pk": 2,
     "fields": {
       "name": "user",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "authentication.group",
+    "model": "user.group",
     "pk": 3,
     "fields": {
       "name": "agency",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "model": "authentication.group",
+    "model": "user.group",
     "pk": 4,
     "fields": {
       "name": "pro",

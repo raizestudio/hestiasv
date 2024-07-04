@@ -63,6 +63,9 @@ class SessionViewSet(viewsets.ModelViewSet):
     queryset = Token.objects.all()
     serializer_class = TokenSerializer
 
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
+
     @action(detail=False, methods=["post"])
     def authenticate(self, request, *args, **kwargs):
         data = request.data.copy()
@@ -115,3 +118,26 @@ class SessionViewSet(viewsets.ModelViewSet):
                 return Response(data, status=status.HTTP_201_CREATED)
 
         return Response([token.errors, refresh.errors, session.errors], status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=["post"], url_path="retrieve-from-token")
+    def retrieve_from_token(self, request, *args, **kwargs):
+        token = request.headers["Authorization"].split(" ")[1]
+
+        if not token:
+            return Response({"message": "Token is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        _token = Token.objects.filter(token=token).first()
+
+        if not _token:
+            return Response({"message": "Token not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        _session = Session.objects.filter(token=_token).first()
+        if not _session:
+            return Response({"message": "Session not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        data = {"session": _session.session, "user": _session.user, "token": _token.token, "refresh": _session.refresh.refresh}
+
+        data["token"] = _token.token
+        data["refresh"] = _session.refresh.refresh
+        data["user"] = UserSerializer(_session.user).data
+        return Response(data, status=status.HTTP_200_OK)

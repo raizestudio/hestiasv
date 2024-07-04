@@ -1,0 +1,732 @@
+[
+  {
+    "model": "geosys.department",
+    "pk": 1,
+    "fields": {
+      "name": "Ain",
+      "iso_3166_2_code": "FR-01",
+      "insee_code": "01",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 2,
+    "fields": {
+      "name": "Aisne",
+      "iso_3166_2_code": "FR-02",
+      "insee_code": "02",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 3,
+    "fields": {
+      "name": "Allier",
+      "iso_3166_2_code": "FR-03",
+      "insee_code": "03",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 4,
+    "fields": {
+      "name": "Alpes-de-Haute-Provence",
+      "iso_3166_2_code": "FR-04",
+      "insee_code": "04",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 5,
+    "fields": {
+      "name": "Hautes-Alpes",
+      "iso_3166_2_code": "FR-05",
+      "insee_code": "05",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 6,
+    "fields": {
+      "name": "Alpes-Maritimes",
+      "iso_3166_2_code": "FR-06",
+      "insee_code": "06",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 7,
+    "fields": {
+      "name": "Ardèche",
+      "iso_3166_2_code": "FR-07",
+      "insee_code": "07",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 8,
+    "fields": {
+      "name": "Ardennes",
+      "iso_3166_2_code": "FR-08",
+      "insee_code": "08",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 9,
+    "fields": {
+      "name": "Ariège",
+      "iso_3166_2_code": "FR-09",
+      "insee_code": "09",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 10,
+    "fields": {
+      "name": "Aube",
+      "iso_3166_2_code": "FR-10",
+      "insee_code": "10",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 11,
+    "fields": {
+      "name": "Aude",
+      "iso_3166_2_code": "FR-11",
+      "insee_code": "11",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 12,
+    "fields": {
+      "name": "Aveyron",
+      "iso_3166_2_code": "FR-12",
+      "insee_code": "12",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 13,
+    "fields": {
+      "name": "Bouches-du-Rhône",
+      "iso_3166_2_code": "FR-13",
+      "insee_code": "13",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 14,
+    "fields": {
+      "name": "Calvados",
+      "iso_3166_2_code": "FR-14",
+      "insee_code": "14",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 15,
+    "fields": {
+      "name": "Cantal",
+      "iso_3166_2_code": "FR-15",
+      "insee_code": "15",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 16,
+    "fields": {
+      "name": "Charente",
+      "iso_3166_2_code": "FR-16",
+      "insee_code": "16",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 17,
+    "fields": {
+      "name": "Charente-Maritime",
+      "iso_3166_2_code": "FR-17",
+      "insee_code": "17",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 18,
+    "fields": {
+      "name": "Cher",
+      "iso_3166_2_code": "FR-18",
+      "insee_code": "18",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 19,
+    "fields": {
+      "name": "Corrèze",
+      "iso_3166_2_code": "FR-19",
+      "insee_code": "19",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 20,
+    "fields": {
+      "name": "Côte-d'Or",
+      "iso_3166_2_code": "FR-21",
+      "insee_code": "21",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 21,
+    "fields": {
+      "name": "Côtes-d'Armor",
+      "iso_3166_2_code": "FR-22",
+      "insee_code": "22",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 22,
+    "fields": {
+      "name": "Creuse",
+      "iso_3166_2_code": "FR-23",
+      "insee_code": "23",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 23,
+    "fields": {
+      "name": "Dordogne",
+      "iso_3166_2_code": "FR-24",
+      "insee_code": "24",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 24,
+    "fields": {
+      "name": "Doubs",
+      "iso_3166_2_code": "FR-25",
+      "insee_code": "25",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 25,
+    "fields": {
+      "name": "Drôme",
+      "iso_3166_2_code": "FR-26",
+      "insee_code": "26",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 26,
+    "fields": {
+      "name": "Eure",
+      "iso_3166_2_code": "FR-27",
+      "insee_code": "27",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 27,
+    "fields": {
+      "name": "Eure-et-Loir",
+      "iso_3166_2_code": "FR-28",
+      "insee_code": "28",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 28,
+    "fields": {
+      "name": "Finistère",
+      "iso_3166_2_code": "FR-29",
+      "insee_code": "29",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 29,
+    "fields": {
+      "name": "Corse-du-Sud",
+      "iso_3166_2_code": "FR-2A",
+      "insee_code": "2A",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 30,
+    "fields": {
+      "name": "Haute-Corse",
+      "iso_3166_2_code": "FR-2B",
+      "insee_code": "2B",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 31,
+    "fields": {
+      "name": "Gard",
+      "iso_3166_2_code": "FR-30",
+      "insee_code": "30",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 32,
+    "fields": {
+      "name": "Haute-Garonne",
+      "iso_3166_2_code": "FR-31",
+      "insee_code": "31",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 33,
+    "fields": {
+      "name": "Gers",
+      "iso_3166_2_code": "FR-32",
+      "insee_code": "32",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 34,
+    "fields": {
+      "name": "Gironde",
+      "iso_3166_2_code": "FR-33",
+      "insee_code": "33",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 35,
+    "fields": {
+      "name": "Hérault",
+      "iso_3166_2_code": "FR-34",
+      "insee_code": "34",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 36,
+    "fields": {
+      "name": "Ille-et-Vilaine",
+      "iso_3166_2_code": "FR-35",
+      "insee_code": "35",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 37,
+    "fields": {
+      "name": "Indre",
+      "iso_3166_2_code": "FR-36",
+      "insee_code": "36",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 38,
+    "fields": {
+      "name": "Indre-et-Loire",
+      "iso_3166_2_code": "FR-37",
+      "insee_code": "37",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 39,
+    "fields": {
+      "name": "Isère",
+      "iso_3166_2_code": "FR-38",
+      "insee_code": "38",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 40,
+    "fields": {
+      "name": "Jura",
+      "iso_3166_2_code": "FR-39",
+      "insee_code": "39",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 41,
+    "fields": {
+      "name": "Landes",
+      "iso_3166_2_code": "FR-40",
+      "insee_code": "40",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 42,
+    "fields": {
+      "name": "Loir-et-Cher",
+      "iso_3166_2_code": "FR-41",
+      "insee_code": "41",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 43,
+    "fields": {
+      "name": "Loire",
+      "iso_3166_2_code": "FR-42",
+      "insee_code": "42",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 44,
+    "fields": {
+      "name": "Haute-Loire",
+      "iso_3166_2_code": "FR-43",
+      "insee_code": "43",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 45,
+    "fields": {
+      "name": "Loire-Atlantique",
+      "iso_3166_2_code": "FR-44",
+      "insee_code": "44",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 46,
+    "fields": {
+      "name": "Loiret",
+      "iso_3166_2_code": "FR-45",
+      "insee_code": "45",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 47,
+    "fields": {
+      "name": "Lot",
+      "iso_3166_2_code": "FR-46",
+      "insee_code": "46",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 48,
+    "fields": {
+      "name": "Lot-et-Garonne",
+      "iso_3166_2_code": "FR-47",
+      "insee_code": "47",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 49,
+    "fields": {
+      "name": "Lozère",
+      "iso_3166_2_code": "FR-48",
+      "insee_code": "48",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 50,
+    "fields": {
+      "name": "Maine-et-Loire",
+      "iso_3166_2_code": "FR-49",
+      "insee_code": "49",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 51,
+    "fields": {
+      "name": "Manche",
+      "iso_3166_2_code": "FR-50",
+      "insee_code": "50",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 52,
+    "fields": {
+      "name": "Marne",
+      "iso_3166_2_code": "FR-51",
+      "insee_code": "51",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 53,
+    "fields": {
+      "name": "Haute-Marne",
+      "iso_3166_2_code": "FR-52",
+      "insee_code": "52",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 54,
+    "fields": {
+      "name": "Mayenne",
+      "iso_3166_2_code": "FR-53",
+      "insee_code": "53",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 55,
+    "fields": {
+      "name": "Meurthe-et-Moselle",
+      "iso_3166_2_code": "FR-54",
+      "insee_code": "54",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 56,
+    "fields": {
+      "name": "Meuse",
+      "iso_3166_2_code": "FR-55",
+      "insee_code": "55",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 57,
+    "fields": {
+      "name": "Morbihan",
+      "iso_3166_2_code": "FR-56",
+      "insee_code": "56",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 58,
+    "fields": {
+      "name": "Moselle",
+      "iso_3166_2_code": "FR-57",
+      "insee_code": "57",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 59,
+    "fields": {
+      "name": "Nièvre",
+      "iso_3166_2_code": "FR-58",
+      "insee_code": "58",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 60,
+    "fields": {
+      "name": "Nord",
+      "iso_3166_2_code": "FR-59",
+      "insee_code": "59",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 61,
+    "fields": {
+      "name": "Oise",
+      "iso_3166_2_code": "FR-60",
+      "insee_code": "60",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 62,
+    "fields": {
+      "name": "Orne",
+      "iso_3166_2_code": "FR-61",
+      "insee_code": "61",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 63,
+    "fields": {
+      "name": "Pas-de-Calais",
+      "iso_3166_2_code": "FR-62",
+      "insee_code": "62",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 64,
+    "fields": {
+      "name": "Puy-de-Dôme",
+      "iso_3166_2_code": "FR-63",
+      "insee_code": "63",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 65,
+    "fields": {
+      "name": "Pyrénées-Atlantiques",
+      "iso_3166_2_code": "FR-64",
+      "insee_code": "64",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 66,
+    "fields": {
+      "name": "Hautes-Pyrénées",
+      "iso_3166_2_code": "FR-65",
+      "insee_code": "65",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 67,
+    "fields": {
+      "name": "Pyrénées-Orientales",
+      "iso_3166_2_code": "FR-66",
+      "insee_code": "66",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 68,
+    "fields": {
+      "name": "Bas-Rhin",
+      "iso_3166_2_code": "FR-67",
+      "insee_code": "67",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 69,
+    "fields": {
+      "name": "Haut-Rhin",
+      "iso_3166_2_code": "FR-68",
+      "insee_code": "68",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 70,
+    "fields": {
+      "name": "Rhône",
+      "iso_3166_2_code": "FR-69",
+      "insee_code": "69",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 71,
+    "fields": {
+      "name": "Haute-Saône",
+      "iso_3166_2_code": "FR-70",
+      "insee_code": "70",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 72,
+    "fields": {
+      "name": "Saône-et-Loire",
+      "iso_3166_2_code": "FR-71",
+      "insee_code": "71",
+      "region": 1
+    }
+  },
+  {
+    "model": "geosys.department",
+    "pk": 73,
+    "fields": {
+      "name": "Sarthe",
+      "iso_3166_2_code": "FR-72",
+      "insee_code": "72",
+      "region": 1
+    }
+  }
+]

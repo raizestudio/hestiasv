@@ -1,13 +1,49 @@
 [
   {
     "model": "core.menuitem",
-    "id": 1,
+    "pk": 1,
     "fields": {
-      "name": "Devis",
+      "name": "Demandes",
       "description": "Menu configuration",
       "order": 1,
+      "menu": 3,
+      "url": "/administration/orders",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 2,
+    "fields": {
+      "name": "Missions",
+      "description": "Menu configuration",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/missions",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 3,
+    "fields": {
+      "name": "Utilisateurs",
+      "description": "Menu administration utilisateurs",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/users",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 4,
+    "fields": {
+      "name": "Demandes ouvertes",
+      "description": "Menu administration utilisateurs",
+      "order": 1,
       "menu": 1,
-      "url": "/configuration/quotation",
+      "url": "/orders?status=OPEN",
       "icon": ""
     }
   }

@@ -1,0 +1,9 @@
+[
+  {
+    "model": "geosys.citytype",
+    "pk": 1,
+    "fields": {
+      "name": "Grand centre urbain"
+    }
+  }
+]

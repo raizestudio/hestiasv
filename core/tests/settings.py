@@ -21,14 +21,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "core",
     "user",
+    "core",
     "authentication",
-    "service",
-    "place",
-    "geosys",
-    "contract",
-    "quotation",
 ]
 
 MIDDLEWARE = [

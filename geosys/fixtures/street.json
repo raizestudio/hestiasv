@@ -1,0 +1,12 @@
+[
+  {
+    "model": "geosys.street",
+    "pk": 1,
+    "fields": {
+      "number": "8",
+      "label": 1,
+      "name": "de Chinon",
+      "city": 1
+    }
+  }
+]
