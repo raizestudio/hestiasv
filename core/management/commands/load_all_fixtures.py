@@ -5,7 +5,12 @@ from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
 from django.db.utils import IntegrityError
 
-ORDERED_MODELS = ["core.menu", "core.menuitem"]
+ORDERED_MODELS = [
+    "core.menu",
+    "core.menuitem",
+    "geosys.streetlabel",
+    "geosys.street",
+]
 
 EXLUDED_APPS = [
     "django.contrib.auth",
@@ -36,6 +41,14 @@ class Command(BaseCommand):
 
         call_command("flush", "--noinput")
         call_command("migrate")
+
+        for model_name in ORDERED_MODELS:
+            model = apps.get_model(model_name)
+            sys.stdout.write(f"Loading fixtures for {model.__name__}. - ")
+            res = self.load_fixtures_for_model(model)
+            if res:
+                models_to_retry.append({"app_label": model_name.split(".")[0], "model": res})
+                res = None
 
         app_configs = apps.get_app_configs()
         for app_config in app_configs:

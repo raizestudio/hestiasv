@@ -1,0 +1,14 @@
+[
+  {
+    "model": "geosys.adress",
+    "pk": 1,
+    "fields": {
+      "name": "root adress",
+      "country": "FR",
+      "region": 4,
+      "department": 38,
+      "city": 1,
+      "street": 1
+    }
+  }
+]

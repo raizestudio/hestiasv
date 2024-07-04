@@ -1,0 +1,14 @@
+[
+  {
+    "model": "geosys.city",
+    "pk": 1,
+    "fields": {
+      "name": "Tours",
+      "zip_code": "37261",
+      "postal_code": "37000",
+      "slug": "tours",
+      "city_type": 1,
+      "department": 38
+    }
+  }
+]

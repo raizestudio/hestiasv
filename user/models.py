@@ -9,6 +9,7 @@ class User(AbstractUser):
     avatar = models.ImageField(_("Avatar"), upload_to="users/avatars/", blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    adress = models.ForeignKey("geosys.Adress", on_delete=models.CASCADE, blank=True, null=True)
     groups = models.ManyToManyField("user.Group", related_name="user_groups", blank=True)
 
     def __str__(self):
