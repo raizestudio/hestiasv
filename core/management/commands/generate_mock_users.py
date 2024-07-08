@@ -5,7 +5,7 @@ from typing import Any
 
 from django.core.management import BaseCommand, CommandError
 
-from user.models import BaseUser
+from user.models import User
 
 
 def generate_username() -> str:
@@ -45,6 +45,6 @@ class Command(BaseCommand):
         # admin = options.get("admin")
 
         for _ in range(int(number)):
-            _user = BaseUser.objects.create_user(username=generate_username(), password=generate_username(), email=generate_email(), role=pick_random_role(admin))
+            _user = User.objects.create_user(username=generate_username(), password=generate_username(), email=generate_email())
 
         sys.stdout.write(self.style.SUCCESS(f"Successfully create {number} users.\n"))

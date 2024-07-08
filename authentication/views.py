@@ -88,6 +88,11 @@ class SessionViewSet(viewsets.ModelViewSet):
             return Response({"message": "Invalid password"}, status=status.HTTP_400_BAD_REQUEST)
 
         _token = Token.generate_token(user=_user.id)
+
+        if Token.objects.filter(user=_user).exists():  # TODO: just for testing
+            Token.objects.filter(user=_user).delete()
+            Refresh.objects.filter(user=_user).delete()
+
         data = {"token": _token, "user": _user.id}
         token = TokenSerializer(data=data)
 

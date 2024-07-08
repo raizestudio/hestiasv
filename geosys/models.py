@@ -2,10 +2,25 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class Adress(models.Model):
-    """Model for storing adresses"""
+class AddressType(models.Model):
+    """Model for storing address types"""
 
     name = models.CharField(_("Nom"), max_length=255)
+
+    class Meta:
+        verbose_name = _("Type d'adresse")
+        verbose_name_plural = _("Types d'adresse")
+
+    def __str__(self):
+        return self.name
+
+
+class Address(models.Model):
+    """Model for storing addresses"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+    label = models.CharField(_("Libellé"), max_length=255)
+
     country = models.ForeignKey("geosys.Country", on_delete=models.CASCADE)
     department = models.ForeignKey("geosys.Department", on_delete=models.CASCADE)
     region = models.ForeignKey("geosys.Region", on_delete=models.CASCADE)
@@ -172,3 +187,66 @@ class StreetLabel(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Language(models.Model):
+    """Model for storing languages"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+    slug = models.SlugField(_("Slug"), max_length=255)
+
+    class Meta:
+        verbose_name = _("Langue")
+        verbose_name_plural = _("Langues")
+
+    def __str__(self):
+        return self.name
+
+
+class Currency(models.Model):
+    """Model for storing currencies"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+    iso_code = models.CharField(_("Code ISO"), max_length=255, primary_key=True)
+    iso_number = models.CharField(_("Code numérique ISO"), max_length=255)
+    decimals = models.IntegerField(_("Décimales"), default=2)
+    symbol = models.CharField(_("Symbole"), max_length=255)
+    rank = models.IntegerField(_("Rang"), default=0)
+
+    class Meta:
+        verbose_name = _("Devise")
+        verbose_name_plural = _("Devises")
+
+    def __str__(self):
+        return self.name
+
+
+class PhoneNumberType(models.Model):
+    """Model for storing phone number types"""
+
+    name = models.CharField(_("Nom"), max_length=255)
+
+    class Meta:
+        verbose_name = _("Type de numéro de téléphone")
+        verbose_name_plural = _("Types de numéro de téléphone")
+
+    def __str__(self):
+        return self.name
+
+
+class PhoneNumber(models.Model):
+    """Model for storing phone numbers"""
+
+    country_code = models.CharField(_("Code pays"), max_length=255)
+    number = models.CharField(_("Numéro"), max_length=255)
+    label = models.CharField(_("Libellé"), max_length=255)
+
+    type = models.ForeignKey("geosys.PhoneNumberType", on_delete=models.CASCADE)
+    country = models.ForeignKey("geosys.Country", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("Numéro de téléphone")
+        verbose_name_plural = _("Numéros de téléphone")
+
+    def __str__(self):
+        return self.number
