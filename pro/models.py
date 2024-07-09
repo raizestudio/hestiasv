@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class BasePro(models.Model):
+class Pro(models.Model):
     """Model for storing base pro"""
 
     name = models.CharField(_("Nom"), max_length=255)
@@ -33,8 +33,13 @@ class GroupPro(models.Model):
         return self.name
 
 
-class Entreprise(BasePro, models.Model):
+class Entreprise(Pro, models.Model):
     """Model for storing agencies"""
+
+    email = models.EmailField(_("Email"))
+
+    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE)
+    phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
 
     class Meta:
         verbose_name = _("Agence")
@@ -44,7 +49,7 @@ class Entreprise(BasePro, models.Model):
         return self.name
 
 
-class SelfEmployed(BasePro, models.Model):
+class SelfEmployed(Pro, models.Model):
     """Model for storing self-employed"""
 
     class Meta:
