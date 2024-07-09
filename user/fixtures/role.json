@@ -1,0 +1,62 @@
+[
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-ADM",
+      "name": "admin",
+      "description": "Rôle administrateur",
+      "slug": "admin",
+      "group": "GR-ADM"
+    }
+  },
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-MNG",
+      "name": "manager",
+      "description": "Rôle manager",
+      "slug": "manager",
+      "group": "GR-STF"
+    }
+  },
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-USR",
+      "name": "user",
+      "description": "Rôle utilisateur",
+      "slug": "user",
+      "group": "GR-USR"
+    }
+  },
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-DRC",
+      "name": "agency director",
+      "description": "Rôle directeur d'agence",
+      "slug": "agency-director",
+      "group": "GR-AGY"
+    }
+  },
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-MAN",
+      "name": "agency manager",
+      "description": "Rôle manager d'agence",
+      "slug": "agency-manager",
+      "group": "GR-AGY"
+    }
+  },
+  {
+    "model": "user.role",
+    "fields": {
+      "code": "RO-EMP",
+      "name": "agency employee",
+      "description": "Rôle employé d'agence",
+      "slug": "agency-employee",
+      "group": "GR-AGY"
+    }
+  }
+]

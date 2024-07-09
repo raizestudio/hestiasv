@@ -21,9 +21,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "user",
     "core",
+    "user",
     "authentication",
+    "service",
+    "place",
+    "geosys",
+    "contract",
+    "quotation",
+    "financial",
 ]
 
 MIDDLEWARE = [
@@ -105,7 +111,10 @@ AUTH_USER_MODEL = "user.User"
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
-    ]
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "authentication.permissions.BearerTokenAuthentication",
+    ],
 }
 
 REST_AUTH_SERIALIZERS = {

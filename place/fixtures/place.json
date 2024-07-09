@@ -1,0 +1,10 @@
+[
+  {
+    "model": "place.place",
+    "pk": 1,
+    "fields": {
+      "name": "Place 1",
+      "description": "Place 1 description"
+    }
+  }
+]

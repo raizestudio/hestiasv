@@ -39,6 +39,30 @@
     "model": "core.menuitem",
     "pk": 4,
     "fields": {
+      "name": "Services",
+      "description": "Menu administration services",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/services",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 5,
+    "fields": {
+      "name": "Lieux",
+      "description": "Menu administration des lieux",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/places",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 6,
+    "fields": {
       "name": "Demandes ouvertes",
       "description": "Menu administration utilisateurs",
       "order": 1,

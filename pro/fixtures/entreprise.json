@@ -1,0 +1,8 @@
+[
+  {
+    "model": "pro.entreprise",
+    "pk": 1,
+    "fields": {
+      "nom": "Société Générale",
+  }
+]

@@ -6,8 +6,16 @@ from django.core.management.base import BaseCommand, CommandError
 from django.db.utils import IntegrityError
 
 ORDERED_MODELS = [
+    "user.group",
+    "user.role",
     "core.menu",
     "core.menuitem",
+    "geosys.continent",
+    "geosys.country",
+    "geosys.region",
+    "geosys.department",
+    "geosys.citytype",
+    "geosys.city",
     "geosys.streetlabel",
     "geosys.street",
 ]
@@ -24,7 +32,7 @@ EXLUDED_APPS = [
     "admin",
 ]
 
-EXCLUDED_MODELS = []
+EXCLUDED_MODELS = ["menu", "menuitem", "continent", "country", "region", "department", "citytype", "city", "streetlabel", "street"]
 
 
 class Command(BaseCommand):
@@ -50,6 +58,7 @@ class Command(BaseCommand):
                 models_to_retry.append({"app_label": model_name.split(".")[0], "model": res})
                 res = None
 
+        sys.stdout.write("End of ORDERED MODELS\n")
         app_configs = apps.get_app_configs()
         for app_config in app_configs:
             if app_config.name.lower() not in EXLUDED_APPS:

@@ -1,9 +1,9 @@
 [
   {
-    "model": "geosys.adress",
+    "model": "geosys.address",
     "pk": 1,
     "fields": {
-      "name": "root adress",
+      "name": "root address",
       "country": "FR",
       "region": 4,
       "department": 38,

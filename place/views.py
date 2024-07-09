@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_access_policy import AccessViewSetMixin
+from rest_framework import status, viewsets
+from rest_framework.response import Response
 
-# Create your views here.
+from place.models import Place
+from place.policies import PlaceAccessPolicy
+from place.serializers import PlaceSerializer
+
+
+class PlaceViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
+    queryset = Place.objects.all()
+    serializer_class = PlaceSerializer
+    access_policy = PlaceAccessPolicy

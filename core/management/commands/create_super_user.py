@@ -4,7 +4,7 @@ from django.contrib.auth.management.commands.createsuperuser import (
 from django.core.management import CommandError
 from django.utils.translation import gettext as _
 
-from user.models import UserPreferences, UserSecurity
+from user.models import Role, UserPreferences, UserSecurity
 
 
 class Command(CreateSuperUserCommand):
@@ -29,6 +29,9 @@ class Command(CreateSuperUserCommand):
             user = self.UserModel._default_manager.db_manager(database).get(username=username)
             user.set_password(password)
             user.set_email(email)
+            user.set_first_name("John")
+            user.set_last_name("Doe")
+            user.role = Role.objects.get(code="RO-ADM")
             user.save()
 
             UserPreferences.objects.get_or_create(user=user, defaults={"language": "fr", "theme": "primary"})
