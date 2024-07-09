@@ -11,7 +11,7 @@ class Quotation(models.Model):
 
     label = models.CharField(max_length=255)
     description = models.TextField()
-    quotation_references = models.ManyToManyField("QuotationReference", null=True)
+    quotation_references = models.ManyToManyField("QuotationReference", verbose_name=_("Quotation References"))
 
     class Meta:
         verbose_name = _("Quotation")

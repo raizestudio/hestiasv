@@ -1,0 +1,14 @@
+[
+  {
+    "model": "pro.enterprise",
+    "pk": 1,
+    "fields": {
+      "name": "Société Générale",
+      "legal_status": "SARL",
+      "siret": "55212022200055",
+      "siren": "552120222",
+      "creation_date": "1864-05-04",
+      "slug": "societe-generale"
+    }
+  }
+]

@@ -250,3 +250,17 @@ class PhoneNumber(models.Model):
 
     def __str__(self):
         return self.number
+
+
+class Email(models.Model):
+    """Model for storing emails"""
+
+    label = models.CharField(_("Libellé"), max_length=255)
+    email = models.EmailField(_("Email"), unique=True)
+
+    class Meta:
+        verbose_name = _("Email")
+        verbose_name_plural = _("Emails")
+
+    def __str__(self):
+        return self.email
