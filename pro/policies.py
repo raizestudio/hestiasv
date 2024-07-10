@@ -7,9 +7,6 @@ class EnterpriseAccessPolicy(AccessPolicy):
         {"action": ["create"], "principal": "*", "effect": "allow"},
         {"action": ["retrieve", "update", "partial_update"], "principal": "*", "effect": "allow"},
         {"action": ["destroy"], "principal": "*", "effect": "allow"},
-        # {"action": ["publish", "unpublish"], "principal": ["group:editor"], "effect": "allow"},
-        # {"action": ["destroy"], "principal": ["*"], "effect": "allow", "condition": "is_author"},
-        # {"action": ["*"], "principal": ["*"], "effect": "deny", "condition": "is_happy_hour"},
     ]
 
     def is_admin(self, request, view, action) -> bool:

@@ -63,6 +63,18 @@
     "model": "core.menuitem",
     "pk": 6,
     "fields": {
+      "name": "References de devis",
+      "description": "Menu administration des references de devis",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/quotations/references",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 7,
+    "fields": {
       "name": "Demandes ouvertes",
       "description": "Menu administration utilisateurs",
       "order": 1,

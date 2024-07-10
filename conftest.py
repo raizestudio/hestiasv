@@ -1,5 +1,5 @@
 import pytest
-from colorama import Fore, Style
+from colorama import Back, Fore, Style
 
 
 @pytest.hookimpl(hookwrapper=True)
