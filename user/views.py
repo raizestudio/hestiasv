@@ -5,6 +5,8 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+from core.paginations import DefaultPageNumberPagination
+from pro.models import Enterprise, SelfEmployed
 from user.models import Group, Role, User, UserPreferences, UserSecurity
 from user.policies import BaseUserAccessPolicy
 from user.serializers import (
@@ -21,9 +23,17 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+    pagination_class = DefaultPageNumberPagination
 
     def list(self, request, *args, **kwargs) -> Response:
-        return super().list(request, *args, **kwargs)
+        queryset = self.get_queryset()
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     @action(detail=False, methods=["get"], url_path="retrieve-dashboard", url_name="retrieve_dashboard")
     def retrieve_dashboard(self, request, *args, **kwargs) -> Response:
@@ -35,9 +45,7 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
                 status=status.HTTP_401_UNAUTHORIZED,
             )
 
-        dashboard = {
-            "new_users": User.objects.filter(role__code="RO-USR").count(),
-        }
+        dashboard = {"new_users": User.objects.all().count(), "new_enterprises": Enterprise.objects.all().count(), "new_pros": SelfEmployed.objects.all().count()}
 
         if user.role.group.code == "GR-ADM":
             return Response(dashboard, status=status.HTTP_200_OK)
