@@ -4,6 +4,7 @@ import uuid
 
 import jwt
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from user.models import User
 
@@ -25,7 +26,22 @@ class Token(models.Model):
 
     @staticmethod
     def generate_token(user: User) -> str:
-        return jwt.encode({"user": user}, str(os.urandom(24)), algorithm="HS256")  # FIXME: Change secret to a more secure value
+        return jwt.encode({"user": user}, "secret", "HS256")  # FIXME: Change secret to a more secure value
+
+
+class TokenBlacklist(models.Model):
+    """Model for storing blacklisted tokens"""
+
+    token = models.CharField(max_length=255, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Token Blacklist"
+        verbose_name_plural = "Token Blacklists"
+
+    def __str__(self):
+        return self.token
 
 
 class Refresh(models.Model):

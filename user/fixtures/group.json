@@ -1,0 +1,52 @@
+[
+  {
+    "model": "user.group",
+    "fields": {
+      "code": "GR-ADM",
+      "name": "admin",
+      "description": "Groupe administrateur",
+      "color": "#FFC0CB",
+      "slug": "admin"
+    }
+  },
+  {
+    "model": "user.group",
+    "fields": {
+      "code": "GR-STF",
+      "name": "staff",
+      "description": "Groupe du personnel",
+      "color": "#00FF00",
+      "slug": "staff"
+    }
+  },
+  {
+    "model": "user.group",
+    "fields": {
+      "code": "GR-USR",
+      "name": "user",
+      "description": "Groupe des utilisateurs",
+      "color": "#0000FF",
+      "slug": "user"
+    }
+  },
+  {
+    "model": "user.group",
+    "fields": {
+      "code": "GR-AGY",
+      "name": "agency",
+      "description": "Groupe des agences",
+      "color": "#FF0000",
+      "slug": "agency"
+    }
+  },
+  {
+    "model": "user.group",
+    "fields": {
+      "code": "GR-SEL",
+      "name": "self employed",
+      "description": "Groupe des professionnels indépendants",
+      "color": "#FF0000",
+      "slug": "self-employed"
+    }
+  }
+]
