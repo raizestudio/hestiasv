@@ -40,3 +40,26 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Setting(models.Model):
+    """Model for storing settings"""
+
+    key = models.CharField(_("Clé"), max_length=255, primary_key=True)
+    value = models.TextField(_("Valeur"))
+
+    class Meta:
+        abstract = True
+        verbose_name = _("Paramètre")
+        verbose_name_plural = _("Paramètres")
+
+    def __str__(self):
+        return self.key
+
+
+class AppSetting(Setting):
+    """Model for storing app settings"""
+
+    class Meta:
+        verbose_name = _("Paramètre de l'application")
+        verbose_name_plural = _("Paramètres de l'application")

@@ -3,9 +3,9 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from core.models import Menu, MenuItem
+from core.models import AppSetting, Menu, MenuItem
 from core.policies import MenuAccessPolicy
-from core.serializers import MenuItemSerializer, MenuSerializer
+from core.serializers import AppSettingSerializer, MenuItemSerializer, MenuSerializer
 
 
 class MenuViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
@@ -42,6 +42,14 @@ class MenuViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
 class MenuItemViewSet(viewsets.ModelViewSet):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
+
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
+
+class AppSettingViewSet(viewsets.ModelViewSet):
+    queryset = AppSetting.objects.all()
+    serializer_class = AppSettingSerializer
 
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)

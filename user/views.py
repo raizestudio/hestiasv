@@ -35,6 +35,24 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    @action(detail=False, methods=["get"], url_path="search", url_name="search")
+    def list_w_term(self, request, *args, **kwargs) -> Response:
+        field = request.query_params.get("field")
+        term = request.query_params.get("term")
+
+        if not field:
+            return Response({"detail": "Field is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not term:
+            return Response({"detail": "Term is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        print(f"DEBUG field: {field} - term: {term}")
+
+        users = User.objects.filter(username__icontains=term)
+        print(f"DEBUG users: {users}")
+        serializer = self.get_serializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
     @action(detail=False, methods=["get"], url_path="retrieve-dashboard", url_name="retrieve_dashboard")
     def retrieve_dashboard(self, request, *args, **kwargs) -> Response:
         user = request.user

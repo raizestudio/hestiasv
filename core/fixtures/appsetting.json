@@ -1,0 +1,23 @@
+[
+  {
+    "model": "core.appsetting",
+    "fields": {
+      "key": "app_name",
+      "value": "Hestia"
+    }
+  },
+  {
+    "model": "core.appsetting",
+    "fields": {
+      "key": "app_description",
+      "value": "Hestia is a simple and lightweight web application for easily managing things."
+    }
+  },
+  {
+    "model": "core.appsetting",
+    "fields": {
+      "key": "let_users_create_account",
+      "value": true
+    }
+  }
+]

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import Menu, MenuItem
+from core.models import AppSetting, Menu, MenuItem
 
 
 class MenuSerializer(serializers.ModelSerializer):
@@ -12,4 +12,10 @@ class MenuSerializer(serializers.ModelSerializer):
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
+        fields = "__all__"
+
+
+class AppSettingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AppSetting
         fields = "__all__"

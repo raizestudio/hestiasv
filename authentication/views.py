@@ -66,6 +66,11 @@ class SessionViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
 
+    @action(detail=False, methods=["get"], url_path="session-id", url_name="session_id")
+    def get_session_id(self, request, *args, **kwargs):
+        _session = Session.generate_session()
+        return Response({"session": _session}, status=status.HTTP_200_OK)
+
     @action(detail=False, methods=["post"])
     def authenticate(self, request, *args, **kwargs):
         data = request.data.copy()
@@ -89,7 +94,7 @@ class SessionViewSet(viewsets.ModelViewSet):
 
         _token = Token.generate_token(user=_user.id)
 
-        if Token.objects.filter(user=_user).exists():  # TODO: just for testing
+        if Token.objects.filter(user=_user).exists():  # TODO: just for testing, in prod the token should be blacklisted and deleted later
             Token.objects.filter(user=_user).delete()
             Refresh.objects.filter(user=_user).delete()
 

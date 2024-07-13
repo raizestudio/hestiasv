@@ -3,8 +3,8 @@ from rest_access_policy import AccessPolicy
 
 class BaseUserAccessPolicy(AccessPolicy):
     statements = [
-        {"action": ["list"], "principal": "*", "effect": "allow", "condition": "is_admin"},
-        {"action": ["retrieve_dashboard"], "principal": "*", "effect": "allow", "condition": "is_admin"},
+        {"action": ["list", "retrieve"], "principal": "*", "effect": "allow", "condition": "is_admin"},
+        {"action": ["retrieve_dashboard", "list_w_term"], "principal": "*", "effect": "allow", "condition": "is_admin"},
         # {"action": ["publish", "unpublish"], "principal": ["group:editor"], "effect": "allow"},
         # {"action": ["destroy"], "principal": ["*"], "effect": "allow", "condition": "is_author"},
         # {"action": ["*"], "principal": ["*"], "effect": "deny", "condition": "is_happy_hour"},

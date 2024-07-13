@@ -13,6 +13,11 @@ class User(AbstractUser):
     addresses = models.ManyToManyField("geosys.Address", related_name="user_addresses", blank=True)
     role = models.ForeignKey("user.Role", on_delete=models.CASCADE, null=True)
 
+    class Meta:
+        verbose_name = _("Utilisateur")
+        verbose_name_plural = _("Utilisateurs")
+        ordering = ["-date_joined"]
+
     def __str__(self):
         return self.email
 

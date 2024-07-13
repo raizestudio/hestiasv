@@ -75,11 +75,35 @@
     "model": "core.menuitem",
     "pk": 7,
     "fields": {
+      "name": "Devis",
+      "description": "Menu administration des devis",
+      "order": 1,
+      "menu": 3,
+      "url": "/administration/quotations",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 8,
+    "fields": {
       "name": "Demandes ouvertes",
       "description": "Menu administration utilisateurs",
       "order": 1,
       "menu": 1,
       "url": "/orders?status=OPEN",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 9,
+    "fields": {
+      "name": "Application",
+      "description": "Menu administration des paramètres de l'application",
+      "order": 1,
+      "menu": 4,
+      "url": "/settings/app",
       "icon": ""
     }
   }

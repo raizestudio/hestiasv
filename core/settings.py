@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
+    "channels",
     "core",
     "user",
     "authentication",
@@ -122,7 +123,17 @@ REST_AUTH_SERIALIZERS = {
     "USER_DETAILS_SERIALIZER": "user.serializers.UserSerializer",
 }
 
+ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True  # FIXME: temporary
+CORS_ALLOW_CREDENTIALS = True
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
+
+ASGI_APPLICATION = "core.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
+}
