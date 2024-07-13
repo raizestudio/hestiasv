@@ -1,0 +1,1341 @@
+[
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "afghanistan",
+      "name": "Islamic Republic of Afghanistan",
+      "numeric_code": "004",
+      "alpha_3_code": "AFG",
+      "alpha_2_code": "AF",
+      "subdivision_code": "ISO 3166-2:AF",
+      "tld": ".af",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "albania",
+      "name": "Republic of Albania",
+      "numeric_code": "008",
+      "alpha_3_code": "ALB",
+      "alpha_2_code": "AL",
+      "subdivision_code": "ISO 3166-2:AL",
+      "tld": ".al",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "algeria",
+      "name": "People's Democratic Republic of Algeria",
+      "numeric_code": "012",
+      "alpha_3_code": "DZA",
+      "alpha_2_code": "DZ",
+      "subdivision_code": "ISO 3166-2:DZ",
+      "tld": ".dz",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "andorra",
+      "name": "Principality of Andorra",
+      "numeric_code": "020",
+      "alpha_3_code": "AND",
+      "alpha_2_code": "AD",
+      "subdivision_code": "ISO 3166-2:AD",
+      "tld": ".ad",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "angola",
+      "name": "Republic of Angola",
+      "numeric_code": "024",
+      "alpha_3_code": "AGO",
+      "alpha_2_code": "AO",
+      "subdivision_code": "ISO 3166-2:AO",
+      "tld": ".ao",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "anguilla",
+      "name": "Anguilla",
+      "numeric_code": "660",
+      "alpha_3_code": "AIA",
+      "alpha_2_code": "AI",
+      "subdivision_code": "ISO 3166-2:AI",
+      "tld": ".ai",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "antarctica",
+      "name": "Antarctica",
+      "numeric_code": "010",
+      "alpha_3_code": "ATA",
+      "alpha_2_code": "AQ",
+      "subdivision_code": "ISO 3166-2:AQ",
+      "tld": ".aq",
+      "continent": "AN"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "antigua_and_barbuda",
+      "name": "Antigua and Barbuda",
+      "numeric_code": "028",
+      "alpha_3_code": "ATG",
+      "alpha_2_code": "AG",
+      "subdivision_code": "ISO 3166-2:AG",
+      "tld": ".ag",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "argentina",
+      "name": "Argentine Republic",
+      "numeric_code": "032",
+      "alpha_3_code": "ARG",
+      "alpha_2_code": "AR",
+      "subdivision_code": "ISO 3166-2:AR",
+      "tld": ".ar",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "armenia",
+      "name": "Republic of Armenia",
+      "numeric_code": "051",
+      "alpha_3_code": "ARM",
+      "alpha_2_code": "AM",
+      "subdivision_code": "ISO 3166-2:AM",
+      "tld": ".am",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "aruba",
+      "name": "Aruba",
+      "numeric_code": "533",
+      "alpha_3_code": "ABW",
+      "alpha_2_code": "AW",
+      "subdivision_code": "ISO 3166-2:AW",
+      "tld": ".aw",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "australia",
+      "name": "Commonwealth of Australia",
+      "numeric_code": "036",
+      "alpha_3_code": "AUS",
+      "alpha_2_code": "AU",
+      "subdivision_code": "ISO 3166-2:AU",
+      "tld": ".au",
+      "continent": "OC"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "austria",
+      "name": "Republic of Austria",
+      "numeric_code": "040",
+      "alpha_3_code": "AUT",
+      "alpha_2_code": "AT",
+      "subdivision_code": "ISO 3166-2:AT",
+      "tld": ".at",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "azerbaijan",
+      "name": "Republic of Azerbaijan",
+      "numeric_code": "031",
+      "alpha_3_code": "AZE",
+      "alpha_2_code": "AZ",
+      "subdivision_code": "ISO 3166-2:AZ",
+      "tld": ".az",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bahamas",
+      "name": "Commonwealth of The Bahamas",
+      "numeric_code": "044",
+      "alpha_3_code": "BHS",
+      "alpha_2_code": "BS",
+      "subdivision_code": "ISO 3166-2:BS",
+      "tld": ".bs",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bahrain",
+      "name": "Kingdom of Bahrain",
+      "numeric_code": "048",
+      "alpha_3_code": "BHR",
+      "alpha_2_code": "BH",
+      "subdivision_code": "ISO 3166-2:BH",
+      "tld": ".bh",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bangladesh",
+      "name": "People's Republic of Bangladesh",
+      "numeric_code": "050",
+      "alpha_3_code": "BGD",
+      "alpha_2_code": "BD",
+      "subdivision_code": "ISO 3166-2:BD",
+      "tld": ".bd",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "barbados",
+      "name": "Barbados",
+      "numeric_code": "052",
+      "alpha_3_code": "BRB",
+      "alpha_2_code": "BB",
+      "subdivision_code": "ISO 3166-2:BB",
+      "tld": ".bb",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "belarus",
+      "name": "Republic of Belarus",
+      "numeric_code": "112",
+      "alpha_3_code": "BLR",
+      "alpha_2_code": "BY",
+      "subdivision_code": "ISO 3166-2:BY",
+      "tld": ".by",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "belgium",
+      "name": "Kingdom of Belgium",
+      "numeric_code": "056",
+      "alpha_3_code": "BEL",
+      "alpha_2_code": "BE",
+      "subdivision_code": "ISO 3166-2:BE",
+      "tld": ".be",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "belize",
+      "name": "Belize",
+      "numeric_code": "084",
+      "alpha_3_code": "BLZ",
+      "alpha_2_code": "BZ",
+      "subdivision_code": "ISO 3166-2:BZ",
+      "tld": ".bz",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "benin",
+      "name": "Republic of Benin",
+      "numeric_code": "204",
+      "alpha_3_code": "BEN",
+      "alpha_2_code": "BJ",
+      "subdivision_code": "ISO 3166-2:BJ",
+      "tld": ".bj",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bermuda",
+      "name": "Bermuda",
+      "numeric_code": "060",
+      "alpha_3_code": "BMU",
+      "alpha_2_code": "BM",
+      "subdivision_code": "ISO 3166-2:BM",
+      "tld": ".bm",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bhutan",
+      "name": "Kingdom of Bhutan",
+      "numeric_code": "064",
+      "alpha_3_code": "BTN",
+      "alpha_2_code": "BT",
+      "subdivision_code": "ISO 3166-2:BT",
+      "tld": ".bt",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bolivia",
+      "name": "Plurinational State of Bolivia",
+      "numeric_code": "068",
+      "alpha_3_code": "BOL",
+      "alpha_2_code": "BO",
+      "subdivision_code": "ISO 3166-2:BO",
+      "tld": ".bo",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bosnia_and_herzegovina",
+      "name": "Bosnia and Herzegovina",
+      "numeric_code": "070",
+      "alpha_3_code": "BIH",
+      "alpha_2_code": "BA",
+      "subdivision_code": "ISO 3166-2:BA",
+      "tld": ".ba",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "botswana",
+      "name": "Republic of Botswana",
+      "numeric_code": "072",
+      "alpha_3_code": "BWA",
+      "alpha_2_code": "BW",
+      "subdivision_code": "ISO 3166-2:BW",
+      "tld": ".bw",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bouvet_island",
+      "name": "Bouvet Island",
+      "numeric_code": "074",
+      "alpha_3_code": "BVT",
+      "alpha_2_code": "BV",
+      "subdivision_code": "ISO 3166-2:BV",
+      "tld": ".bv",
+      "continent": "AN"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "brazil",
+      "name": "Federative Republic of Brazil",
+      "numeric_code": "076",
+      "alpha_3_code": "BRA",
+      "alpha_2_code": "BR",
+      "subdivision_code": "ISO 3166-2:BR",
+      "tld": ".br",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "british_indian_ocean_territory",
+      "name": "British Indian Ocean Territory",
+      "numeric_code": "086",
+      "alpha_3_code": "IOT",
+      "alpha_2_code": "IO",
+      "subdivision_code": "ISO 3166-2:IO",
+      "tld": ".io",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "brunei_darussalam",
+      "name": "Brunei Darussalam",
+      "numeric_code": "096",
+      "alpha_3_code": "BRN",
+      "alpha_2_code": "BN",
+      "subdivision_code": "ISO 3166-2:BN",
+      "tld": ".bn",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "bulgaria",
+      "name": "Republic of Bulgaria",
+      "numeric_code": "100",
+      "alpha_3_code": "BGR",
+      "alpha_2_code": "BG",
+      "subdivision_code": "ISO 3166-2:BG",
+      "tld": ".bg",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "burkina_faso",
+      "name": "Burkina Faso",
+      "numeric_code": "854",
+      "alpha_3_code": "BFA",
+      "alpha_2_code": "BF",
+      "subdivision_code": "ISO 3166-2:BF",
+      "tld": ".bf",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "burundi",
+      "name": "Republic of Burundi",
+      "numeric_code": "108",
+      "alpha_3_code": "BDI",
+      "alpha_2_code": "BI",
+      "subdivision_code": "ISO 3166-2:BI",
+      "tld": ".bi",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cambodia",
+      "name": "Kingdom of Cambodia",
+      "numeric_code": "116",
+      "alpha_3_code": "KHM",
+      "alpha_2_code": "KH",
+      "subdivision_code": "ISO 3166-2:KH",
+      "tld": ".kh",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cameroon",
+      "name": "Republic of Cameroon",
+      "numeric_code": "120",
+      "alpha_3_code": "CMR",
+      "alpha_2_code": "CM",
+      "subdivision_code": "ISO 3166-2:CM",
+      "tld": ".cm",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "canada",
+      "name": "Canada",
+      "numeric_code": "124",
+      "alpha_3_code": "CAN",
+      "alpha_2_code": "CA",
+      "subdivision_code": "ISO 3166-2:CA",
+      "tld": ".ca",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cape_verde",
+      "name": "Republic of Cape Verde",
+      "numeric_code": "132",
+      "alpha_3_code": "CPV",
+      "alpha_2_code": "CV",
+      "subdivision_code": "ISO 3166-2:CV",
+      "tld": ".cv",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cayman_islands",
+      "name": "Cayman Islands",
+      "numeric_code": "136",
+      "alpha_3_code": "CYM",
+      "alpha_2_code": "KY",
+      "subdivision_code": "ISO 3166-2:KY",
+      "tld": ".ky",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "central_african_republic",
+      "name": "Central African Republic",
+      "numeric_code": "140",
+      "alpha_3_code": "CAF",
+      "alpha_2_code": "CF",
+      "subdivision_code": "ISO 3166-2:CF",
+      "tld": ".cf",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "chad",
+      "name": "Republic of Chad",
+      "numeric_code": "148",
+      "alpha_3_code": "TCD",
+      "alpha_2_code": "TD",
+      "subdivision_code": "ISO 3166-2:TD",
+      "tld": ".td",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "chile",
+      "name": "Republic of Chile",
+      "numeric_code": "152",
+      "alpha_3_code": "CHL",
+      "alpha_2_code": "CL",
+      "subdivision_code": "ISO 3166-2:CL",
+      "tld": ".cl",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "china",
+      "name": "People's Republic of China",
+      "numeric_code": "156",
+      "alpha_3_code": "CHN",
+      "alpha_2_code": "CN",
+      "subdivision_code": "ISO 3166-2:CN",
+      "tld": ".cn",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "christmas_island",
+      "name": "Christmas Island",
+      "numeric_code": "162",
+      "alpha_3_code": "CXR",
+      "alpha_2_code": "CX",
+      "subdivision_code": "ISO 3166-2:CX",
+      "tld": ".cx",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cocos_keeling_islands",
+      "name": "Cocos (Keeling) Islands",
+      "numeric_code": "166",
+      "alpha_3_code": "CCK",
+      "alpha_2_code": "CC",
+      "subdivision_code": "ISO 3166-2:CC",
+      "tld": ".cc",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "colombia",
+      "name": "Republic of Colombia",
+      "numeric_code": "170",
+      "alpha_3_code": "COL",
+      "alpha_2_code": "CO",
+      "subdivision_code": "ISO 3166-2:CO",
+      "tld": ".co",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "comoros",
+      "name": "Union of the Comoros",
+      "numeric_code": "174",
+      "alpha_3_code": "COM",
+      "alpha_2_code": "KM",
+      "subdivision_code": "ISO 3166-2:KM",
+      "tld": ".km",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "congo",
+      "name": "Republic of the Congo",
+      "numeric_code": "178",
+      "alpha_3_code": "COG",
+      "alpha_2_code": "CG",
+      "subdivision_code": "ISO 3166-2:CG",
+      "tld": ".cg",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "congo_the_democratic_republic_of_the",
+      "name": "Democratic Republic of the Congo",
+      "numeric_code": "180",
+      "alpha_3_code": "COD",
+      "alpha_2_code": "CD",
+      "subdivision_code": "ISO 3166-2:CD",
+      "tld": ".cd",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cook_islands",
+      "name": "Cook Islands",
+      "numeric_code": "184",
+      "alpha_3_code": "COK",
+      "alpha_2_code": "CK",
+      "subdivision_code": "ISO 3166-2:CK",
+      "tld": ".ck",
+      "continent": "OC"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "costa_rica",
+      "name": "Republic of Costa Rica",
+      "numeric_code": "188",
+      "alpha_3_code": "CRI",
+      "alpha_2_code": "CR",
+      "subdivision_code": "ISO 3166-2:CR",
+      "tld": ".cr",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cote_divoire",
+      "name": "Republic of Côte d'Ivoire",
+      "numeric_code": "384",
+      "alpha_3_code": "CIV",
+      "alpha_2_code": "CI",
+      "subdivision_code": "ISO 3166-2:CI",
+      "tld": ".ci",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "croatia",
+      "name": "Republic of Croatia",
+      "numeric_code": "191",
+      "alpha_3_code": "HRV",
+      "alpha_2_code": "HR",
+      "subdivision_code": "ISO 3166-2:HR",
+      "tld": ".hr",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cuba",
+      "name": "Republic of Cuba",
+      "numeric_code": "192",
+      "alpha_3_code": "CUB",
+      "alpha_2_code": "CU",
+      "subdivision_code": "ISO 3166-2:CU",
+      "tld": ".cu",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "cyprus",
+      "name": "Republic of Cyprus",
+      "numeric_code": "196",
+      "alpha_3_code": "CYP",
+      "alpha_2_code": "CY",
+      "subdivision_code": "ISO 3166-2:CY",
+      "tld": ".cy",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "czech_republic",
+      "name": "Czech Republic",
+      "numeric_code": "203",
+      "alpha_3_code": "CZE",
+      "alpha_2_code": "CZ",
+      "subdivision_code": "ISO 3166-2:CZ",
+      "tld": ".cz",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "denmark",
+      "name": "Kingdom of Denmark",
+      "numeric_code": "208",
+      "alpha_3_code": "DNK",
+      "alpha_2_code": "DK",
+      "subdivision_code": "ISO 3166-2:DK",
+      "tld": ".dk",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "djibouti",
+      "name": "Republic of Djibouti",
+      "numeric_code": "262",
+      "alpha_3_code": "DJI",
+      "alpha_2_code": "DJ",
+      "subdivision_code": "ISO 3166-2:DJ",
+      "tld": ".dj",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "dominica",
+      "name": "Commonwealth of Dominica",
+      "numeric_code": "212",
+      "alpha_3_code": "DMA",
+      "alpha_2_code": "DM",
+      "subdivision_code": "ISO 3166-2:DM",
+      "tld": ".dm",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "dominican_republic",
+      "name": "Dominican Republic",
+      "numeric_code": "214",
+      "alpha_3_code": "DOM",
+      "alpha_2_code": "DO",
+      "subdivision_code": "ISO 3166-2:DO",
+      "tld": ".do",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "ecuador",
+      "name": "Republic of Ecuador",
+      "numeric_code": "218",
+      "alpha_3_code": "ECU",
+      "alpha_2_code": "EC",
+      "subdivision_code": "ISO 3166-2:EC",
+      "tld": ".ec",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "egypt",
+      "name": "Arab Republic of Egypt",
+      "numeric_code": "818",
+      "alpha_3_code": "EGY",
+      "alpha_2_code": "EG",
+      "subdivision_code": "ISO 3166-2:EG",
+      "tld": ".eg",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "el_salvador",
+      "name": "Republic of El Salvador",
+      "numeric_code": "222",
+      "alpha_3_code": "SLV",
+      "alpha_2_code": "SV",
+      "subdivision_code": "ISO 3166-2:SV",
+      "tld": ".sv",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "equatorial_guinea",
+      "name": "Republic of Equatorial Guinea",
+      "numeric_code": "226",
+      "alpha_3_code": "GNQ",
+      "alpha_2_code": "GQ",
+      "subdivision_code": "ISO 3166-2:GQ",
+      "tld": ".gq",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "eritrea",
+      "name": "State of Eritrea",
+      "numeric_code": "232",
+      "alpha_3_code": "ERI",
+      "alpha_2_code": "ER",
+      "subdivision_code": "ISO 3166-2:ER",
+      "tld": ".er",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "estonia",
+      "name": "Republic of Estonia",
+      "numeric_code": "233",
+      "alpha_3_code": "EST",
+      "alpha_2_code": "EE",
+      "subdivision_code": "ISO 3166-2:EE",
+      "tld": ".ee",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "ethiopia",
+      "name": "Federal Democratic Republic of Ethiopia",
+      "numeric_code": "231",
+      "alpha_3_code": "ETH",
+      "alpha_2_code": "ET",
+      "subdivision_code": "ISO 3166-2:ET",
+      "tld": ".et",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "falkland_islands_malvinas",
+      "name": "Falkland Islands (Malvinas)",
+      "numeric_code": "238",
+      "alpha_3_code": "FLK",
+      "alpha_2_code": "FK",
+      "subdivision_code": "ISO 3166-2:FK",
+      "tld": ".fk",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "faroe_islands",
+      "name": "Faroe Islands",
+      "numeric_code": "234",
+      "alpha_3_code": "FRO",
+      "alpha_2_code": "FO",
+      "subdivision_code": "ISO 3166-2:FO",
+      "tld": ".fo",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "fiji",
+      "name": "Republic of Fiji",
+      "numeric_code": "242",
+      "alpha_3_code": "FJI",
+      "alpha_2_code": "FJ",
+      "subdivision_code": "ISO 3166-2:FJ",
+      "tld": ".fj",
+      "continent": "OC"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "finland",
+      "name": "Republic of Finland",
+      "numeric_code": "246",
+      "alpha_3_code": "FIN",
+      "alpha_2_code": "FI",
+      "subdivision_code": "ISO 3166-2:FI",
+      "tld": ".fi",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "france",
+      "name": "French Republic",
+      "numeric_code": "250",
+      "alpha_3_code": "FRA",
+      "alpha_2_code": "FR",
+      "subdivision_code": "ISO 3166-2:FR",
+      "tld": ".fr",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "french_guiana",
+      "name": "French Guiana",
+      "numeric_code": "254",
+      "alpha_3_code": "GUF",
+      "alpha_2_code": "GF",
+      "subdivision_code": "ISO 3166-2:GF",
+      "tld": ".gf",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "french_polynesia",
+      "name": "French Polynesia",
+      "numeric_code": "258",
+      "alpha_3_code": "PYF",
+      "alpha_2_code": "PF",
+      "subdivision_code": "ISO 3166-2:PF",
+      "tld": ".pf",
+      "continent": "OC"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "french_southern_territories",
+      "name": "French Southern Territories",
+      "numeric_code": "260",
+      "alpha_3_code": "ATF",
+      "alpha_2_code": "TF",
+      "subdivision_code": "ISO 3166-2:TF",
+      "tld": ".tf",
+      "continent": "AN"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "gabon",
+      "name": "Gabonese Republic",
+      "numeric_code": "266",
+      "alpha_3_code": "GAB",
+      "alpha_2_code": "GA",
+      "subdivision_code": "ISO 3166-2:GA",
+      "tld": ".ga",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "gambia",
+      "name": "Republic of The Gambia",
+      "numeric_code": "270",
+      "alpha_3_code": "GMB",
+      "alpha_2_code": "GM",
+      "subdivision_code": "ISO 3166-2:GM",
+      "tld": ".gm",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "georgia",
+      "name": "Georgia",
+      "numeric_code": "268",
+      "alpha_3_code": "GEO",
+      "alpha_2_code": "GE",
+      "subdivision_code": "ISO 3166-2:GE",
+      "tld": ".ge",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "germany",
+      "name": "Federal Republic of Germany",
+      "numeric_code": "276",
+      "alpha_3_code": "DEU",
+      "alpha_2_code": "DE",
+      "subdivision_code": "ISO 3166-2:DE",
+      "tld": ".de",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "ghana",
+      "name": "Republic of Ghana",
+      "numeric_code": "288",
+      "alpha_3_code": "GHA",
+      "alpha_2_code": "GH",
+      "subdivision_code": "ISO 3166-2:GH",
+      "tld": ".gh",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "gibraltar",
+      "name": "Gibraltar",
+      "numeric_code": "292",
+      "alpha_3_code": "GIB",
+      "alpha_2_code": "GI",
+      "subdivision_code": "ISO 3166-2:GI",
+      "tld": ".gi",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "greece",
+      "name": "Hellenic Republic",
+      "numeric_code": "300",
+      "alpha_3_code": "GRC",
+      "alpha_2_code": "GR",
+      "subdivision_code": "ISO 3166-2:GR",
+      "tld": ".gr",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "greenland",
+      "name": "Greenland",
+      "numeric_code": "304",
+      "alpha_3_code": "GRL",
+      "alpha_2_code": "GL",
+      "subdivision_code": "ISO 3166-2:GL",
+      "tld": ".gl",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "grenada",
+      "name": "Grenada",
+      "numeric_code": "308",
+      "alpha_3_code": "GRD",
+      "alpha_2_code": "GD",
+      "subdivision_code": "ISO 3166-2:GD",
+      "tld": ".gd",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guadeloupe",
+      "name": "Guadeloupe",
+      "numeric_code": "312",
+      "alpha_3_code": "GLP",
+      "alpha_2_code": "GP",
+      "subdivision_code": "ISO 3166-2:GP",
+      "tld": ".gp",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guam",
+      "name": "Guam",
+      "numeric_code": "316",
+      "alpha_3_code": "GUM",
+      "alpha_2_code": "GU",
+      "subdivision_code": "ISO 3166-2:GU",
+      "tld": ".gu",
+      "continent": "OC"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guatemala",
+      "name": "Republic of Guatemala",
+      "numeric_code": "320",
+      "alpha_3_code": "GTM",
+      "alpha_2_code": "GT",
+      "subdivision_code": "ISO 3166-2:GT",
+      "tld": ".gt",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guernsey",
+      "name": "Bailiwick of Guernsey",
+      "numeric_code": "831",
+      "alpha_3_code": "GGY",
+      "alpha_2_code": "GG",
+      "subdivision_code": "ISO 3166-2:GG",
+      "tld": ".gg",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guinea",
+      "name": "Republic of Guinea",
+      "numeric_code": "324",
+      "alpha_3_code": "GIN",
+      "alpha_2_code": "GN",
+      "subdivision_code": "ISO 3166-2:GN",
+      "tld": ".gn",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guinea_bissau",
+      "name": "Republic of Guinea-Bissau",
+      "numeric_code": "624",
+      "alpha_3_code": "GNB",
+      "alpha_2_code": "GW",
+      "subdivision_code": "ISO 3166-2:GW",
+      "tld": ".gw",
+      "continent": "AF"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "guyana",
+      "name": "Co-operative Republic of Guyana",
+      "numeric_code": "328",
+      "alpha_3_code": "GUY",
+      "alpha_2_code": "GY",
+      "subdivision_code": "ISO 3166-2:GY",
+      "tld": ".gy",
+      "continent": "SA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "haiti",
+      "name": "Republic of Haiti",
+      "numeric_code": "332",
+      "alpha_3_code": "HTI",
+      "alpha_2_code": "HT",
+      "subdivision_code": "ISO 3166-2:HT",
+      "tld": ".ht",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "heard_island_and_mcdonald_islands",
+      "name": "Heard Island and McDonald Islands",
+      "numeric_code": "334",
+      "alpha_3_code": "HMD",
+      "alpha_2_code": "HM",
+      "subdivision_code": "ISO 3166-2:HM",
+      "tld": ".hm",
+      "continent": "AN"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "holy_see_vatican_city_state",
+      "name": "Holy See (Vatican City State)",
+      "numeric_code": "336",
+      "alpha_3_code": "VAT",
+      "alpha_2_code": "VA",
+      "subdivision_code": "ISO 3166-2:VA",
+      "tld": ".va",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "honduras",
+      "name": "Republic of Honduras",
+      "numeric_code": "340",
+      "alpha_3_code": "HND",
+      "alpha_2_code": "HN",
+      "subdivision_code": "ISO 3166-2:HN",
+      "tld": ".hn",
+      "continent": "NA"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "hong_kong",
+      "name": "Hong Kong Special Administrative Region of China",
+      "numeric_code": "344",
+      "alpha_3_code": "HKG",
+      "alpha_2_code": "HK",
+      "subdivision_code": "ISO 3166-2:HK",
+      "tld": ".hk",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "hungary",
+      "name": "Hungary",
+      "numeric_code": "348",
+      "alpha_3_code": "HUN",
+      "alpha_2_code": "HU",
+      "subdivision_code": "ISO 3166-2:HU",
+      "tld": ".hu",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "iceland",
+      "name": "Republic of Iceland",
+      "numeric_code": "352",
+      "alpha_3_code": "ISL",
+      "alpha_2_code": "IS",
+      "subdivision_code": "ISO 3166-2:IS",
+      "tld": ".is",
+      "continent": "EU"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "india",
+      "name": "Republic of India",
+      "numeric_code": "356",
+      "alpha_3_code": "IND",
+      "alpha_2_code": "IN",
+      "subdivision_code": "ISO 3166-2:IN",
+      "tld": ".in",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "indonesia",
+      "name": "Republic of Indonesia",
+      "numeric_code": "360",
+      "alpha_3_code": "IDN",
+      "alpha_2_code": "ID",
+      "subdivision_code": "ISO 3166-2:ID",
+      "tld": ".id",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "iran_islamic_republic_of",
+      "name": "Islamic Republic of Iran",
+      "numeric_code": "364",
+      "alpha_3_code": "IRN",
+      "alpha_2_code": "IR",
+      "subdivision_code": "ISO 3166-2:IR",
+      "tld": ".ir",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "iraq",
+      "name": "Republic of Iraq",
+      "numeric_code": "368",
+      "alpha_3_code": "IRQ",
+      "alpha_2_code": "IQ",
+      "subdivision_code": "ISO 3166-2:IQ",
+      "tld": ".iq",
+      "continent": "AS"
+    }
+  },
+  {
+    "model": "geosys.country",
+    "fields": {
+      "iso_name": "ireland",
+      "name": "Ireland",
+      "numeric_code": "372",
+      "alpha_3_code": "IRL",
+      "alpha_2_code": "IE",
+      "subdivision_code": "ISO 3166-2:IE",
+      "tld": ".ie",
+      "continent": "EU"
+    }
+  }
+]

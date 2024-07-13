@@ -1,0 +1,14 @@
+[
+  {
+    "model": "pro.selfemployed",
+    "pk": 1,
+    "fields": {
+      "name": "Diego Maradona",
+      "legal_status": "independent",
+      "siret": "11111011100011",
+      "siren": "111110111",
+      "creation_date": "1864-05-04",
+      "slug": "diego-maradona"
+    }
+  }
+]

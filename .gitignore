@@ -14,6 +14,10 @@ __pycache__
 *.pyo
 *.pyd
 
+# Coverage
+.coverage
+htmlcov
+
 # Env
 *.env
 venv
@@ -22,3 +26,10 @@ venv
 *.idea
 *.vscode
 *.DS_Store
+
+# Logs
+logs
+*.log
+
+# Notes
+notes.md
