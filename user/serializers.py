@@ -3,12 +3,6 @@ from rest_framework import serializers
 from user.models import Group, Role, User, UserPreferences, UserSecurity
 
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = "__all__"
-
-
 class UserPreferencesSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserPreferences
@@ -30,6 +24,16 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class RoleSerializer(serializers.ModelSerializer):
+    group = GroupSerializer(read_only=True)
+
     class Meta:
         model = Role
+        fields = "__all__"
+
+
+class UserSerializer(serializers.ModelSerializer):
+    role = RoleSerializer(read_only=True)
+
+    class Meta:
+        model = User
         fields = "__all__"

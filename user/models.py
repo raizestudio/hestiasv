@@ -13,6 +13,11 @@ class User(AbstractUser):
     addresses = models.ManyToManyField("geosys.Address", related_name="user_addresses", blank=True)
     role = models.ForeignKey("user.Role", on_delete=models.CASCADE, null=True)
 
+    class Meta:
+        verbose_name = _("Utilisateur")
+        verbose_name_plural = _("Utilisateurs")
+        ordering = ["-date_joined"]
+
     def __str__(self):
         return self.email
 
@@ -51,7 +56,7 @@ class UserSecurity(models.Model):
     is_email_verified = models.BooleanField(_("Email vérifié"), default=False)
     is_phone_verified = models.BooleanField(_("Téléphone vérifié"), default=False)
     is_two_factor_enabled = models.BooleanField(_("Double authentification activée"), default=False)
-    anti_phishing_code = models.CharField(_("Code anti-phishing"), max_length=255, blank=True, null=True)
+    anti_phishing_code = models.CharField(_("Code anti-phishing"), max_length=255, blank=True)
 
     class Meta:
         verbose_name = _("Sécurité utilisateur")

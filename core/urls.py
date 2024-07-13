@@ -4,10 +4,11 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from core.views import MenuViewSet
+from core.views import AppSettingViewSet, MenuViewSet
 
 router = DefaultRouter()
-router.register("api/menus", MenuViewSet, basename="user")
+router.register("api/menus", MenuViewSet, basename="menus")
+router.register("api/settings", AppSettingViewSet, basename="settings")
 
 urlpatterns = router.urls
 urlpatterns += [
@@ -18,4 +19,5 @@ urlpatterns += [
     path("api/services/", include("service.urls")),  # Service API
     path("api/places/", include("place.urls")),  # Place API
     path("api/quotations/", include("quotation.urls")),  # Quotation API
+    path("api/pros/", include("pro.urls")),  # Pro API
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

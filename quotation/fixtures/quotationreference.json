@@ -1,0 +1,12 @@
+[
+  {
+    "model": "quotation.quotationreference",
+    "pk": 1,
+    "fields": {
+      "label": "Quotation Reference",
+      "description": "Quotation Reference",
+      "service": 1,
+      "place": 1
+    }
+  }
+]

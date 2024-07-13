@@ -12,6 +12,9 @@ class Pro(models.Model):
     creation_date = models.DateField(_("Date de création"))
     slug = models.SlugField(_("Slug"), max_length=255)
 
+    phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
+    emails = models.ManyToManyField("geosys.Email", verbose_name=_("Emails"))
+
     class Meta:
         abstract = True
 
@@ -33,13 +36,27 @@ class GroupPro(models.Model):
         return self.name
 
 
-class Entreprise(Pro, models.Model):
+class EnterpriseUser(models.Model):
+    """Model for storing enterprise users"""
+
+    user = models.ForeignKey("user.User", verbose_name=_("Utilisateur"), on_delete=models.CASCADE)
+    position = models.CharField(_("Rôle"), max_length=255)
+
+    date_joined = models.DateTimeField(_("Date de création"), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Utilisateur d'agence")
+        verbose_name_plural = _("Utilisateurs d'agence")
+
+    def __str__(self):
+        return self.user.username
+
+
+class Enterprise(Pro, models.Model):
     """Model for storing agencies"""
 
-    email = models.EmailField(_("Email"))
-
-    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE)
-    phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
+    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
+    users = models.ManyToManyField("pro.EnterpriseUser", verbose_name=_("Utilisateurs"))
 
     class Meta:
         verbose_name = _("Agence")
@@ -47,6 +64,12 @@ class Entreprise(Pro, models.Model):
 
     def __str__(self):
         return self.name
+
+    def add_user(self, user, position):
+        """Method for adding user to agency"""
+
+        enterprise_user = EnterpriseUser.objects.create(user=user, position=position)
+        self.users.add(enterprise_user)
 
 
 class SelfEmployed(Pro, models.Model):
