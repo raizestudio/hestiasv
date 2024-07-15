@@ -2,6 +2,7 @@ from django.contrib.auth.management.commands.createsuperuser import (
     Command as CreateSuperUserCommand,
 )
 from django.core.management import CommandError
+from django.utils import timezone
 from django.utils.translation import gettext as _
 
 from user.models import Role, UserPreferences, UserSecurity
@@ -37,7 +38,14 @@ class Command(CreateSuperUserCommand):
             UserPreferences.objects.get_or_create(user=user, defaults={"language": "fr", "theme": "primary"})
 
             UserSecurity.objects.get_or_create(
-                user=user, defaults={"is_email_verified": True, "is_phone_verified": False, "is_two_factor_enabled": False, "anti_phishing_code": ""}
+                user=user,
+                defaults={
+                    "is_phone_verified": False,
+                    "is_two_factor_enabled": False,
+                    "anti_phishing_code": "",
+                    "email_validation_code_sent_at": timezone.now(),
+                    "email_validation_code_confirmed_at": timezone.now(),
+                },
             )
 
             self.stdout.write(self.style.SUCCESS(f"Superuser {username} created successfully with the specified password."))
