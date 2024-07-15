@@ -46,6 +46,7 @@ class UserPreferences(models.Model):
     theme = models.CharField(_("Thème"), max_length=255)
     is_public_profile = models.BooleanField(_("Profil public"), default=True)
 
+
     class Meta:
         verbose_name = _("Préférence utilisateur")
         verbose_name_plural = _("Préférences utilisateurs")
