@@ -46,7 +46,6 @@ class UserPreferences(models.Model):
     theme = models.CharField(_("Thème"), max_length=255)
     is_public_profile = models.BooleanField(_("Profil public"), default=True)
 
-
     class Meta:
         verbose_name = _("Préférence utilisateur")
         verbose_name_plural = _("Préférences utilisateurs")
@@ -59,10 +58,12 @@ class UserSecurity(models.Model):
     """Model for storing user security"""
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     email_validation_code = models.CharField(_("Code de validation email"), max_length=255, blank=True, unique=True)
     email_validation_code_expires_at = models.DateTimeField(_("Code de validation email expire à"), default=timezone.now() + timezone.timedelta(minutes=30))
     email_validation_code_sent_at = models.DateTimeField(_("Code de validation email envoyé à"))
     email_validation_code_confirmed_at = models.DateTimeField(_("Code de validation email expire à"), blank=True, null=True)
+
     is_phone_verified = models.BooleanField(_("Téléphone vérifié"), default=False)
     is_two_factor_enabled = models.BooleanField(_("Double authentification activée"), default=False)
     anti_phishing_code = models.CharField(_("Code anti-phishing"), max_length=255, blank=True)
@@ -79,7 +80,7 @@ class UserSecurity(models.Model):
         code = "".join(random.choices(string.ascii_letters + string.digits, k=16))
         return code
 
-
+      
 class Group(models.Model):
     """Model for storing user groups"""
 

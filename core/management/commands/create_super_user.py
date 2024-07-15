@@ -2,7 +2,9 @@ from django.contrib.auth.management.commands.createsuperuser import (
     Command as CreateSuperUserCommand,
 )
 from django.core.management import CommandError
+
 from django.utils import timezone
+
 from django.utils.translation import gettext as _
 
 from user.models import Role, UserPreferences, UserSecurity
@@ -38,6 +40,7 @@ class Command(CreateSuperUserCommand):
             UserPreferences.objects.get_or_create(user=user, defaults={"language": "fr", "theme": "primary"})
 
             UserSecurity.objects.get_or_create(
+
                 user=user,
                 defaults={
                     "is_phone_verified": False,

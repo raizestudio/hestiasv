@@ -8,6 +8,11 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+from rest_access_policy import AccessViewSetMixin
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
 from core.paginations import DefaultPageNumberPagination
 from pro.models import Enterprise, SelfEmployed
 from user.models import Group, Role, User, UserPreferences, UserSecurity
@@ -55,6 +60,7 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         print(f"DEBUG users: {users}")
         serializer = self.get_serializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
 
     @action(detail=False, methods=["get"], url_path="email/activate/(?P<email_code>[^/.]+)", url_name="email_activate")
     def confirm_email(self, request, email_code: str, *args, **kwargs) -> Response:
