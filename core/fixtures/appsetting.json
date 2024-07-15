@@ -17,7 +17,21 @@
     "model": "core.appsetting",
     "fields": {
       "key": "let_users_create_account",
-      "value": true
+      "value": 1
+    }
+  },
+  {
+    "model": "core.appsetting",
+    "fields": {
+      "key": "let_users_reset_password",
+      "value": 1
+    }
+  },
+  {
+    "model": "core.appsetting",
+    "fields": {
+      "key": "new_accounts_need_approval",
+      "value": 0
     }
   }
 ]
