@@ -63,7 +63,6 @@ class UserSecurity(models.Model):
     email_validation_code_expires_at = models.DateTimeField(_("Code de validation email expire à"), default=timezone.now() + timezone.timedelta(minutes=30))
     email_validation_code_sent_at = models.DateTimeField(_("Code de validation email envoyé à"))
     email_validation_code_confirmed_at = models.DateTimeField(_("Code de validation email expire à"), blank=True, null=True)
-
     is_phone_verified = models.BooleanField(_("Téléphone vérifié"), default=False)
     is_two_factor_enabled = models.BooleanField(_("Double authentification activée"), default=False)
     anti_phishing_code = models.CharField(_("Code anti-phishing"), max_length=255, blank=True)
@@ -80,7 +79,7 @@ class UserSecurity(models.Model):
         code = "".join(random.choices(string.ascii_letters + string.digits, k=16))
         return code
 
-      
+
 class Group(models.Model):
     """Model for storing user groups"""
 
