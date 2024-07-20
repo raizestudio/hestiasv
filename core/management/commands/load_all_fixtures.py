@@ -18,6 +18,7 @@ ORDERED_MODELS = [
     "geosys.city",
     "geosys.streetlabel",
     "geosys.street",
+    "geosys.addresstype",
 ]
 
 EXLUDED_APPS = [
@@ -32,7 +33,7 @@ EXLUDED_APPS = [
     "admin",
 ]
 
-EXCLUDED_MODELS = ["menu", "menuitem", "continent", "country", "region", "department", "citytype", "city", "streetlabel", "street"]
+EXCLUDED_MODELS = ["menu", "menuitem", "continent", "country", "region", "department", "citytype", "city", "streetlabel", "street", "adressetype"]
 
 
 class Command(BaseCommand):

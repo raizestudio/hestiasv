@@ -37,6 +37,14 @@ class User(AbstractUser):
         self.last_name = last_name
         self.save()
 
+    def set_role(self, role):
+        self.role = role
+        self.save()
+
+    def set_address(self, address):
+        self.addresses.add(address)
+        self.save()
+
 
 class UserPreferences(models.Model):
     """Model for storing user preferences"""

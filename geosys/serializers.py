@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from geosys.models import (
     Address,
+    AddressType,
     City,
     CityType,
     Continent,
@@ -13,11 +14,11 @@ from geosys.models import (
 )
 
 
-class AddressSerializer(serializers.ModelSerializer):
-    """Serializer for Address model"""
+class AddressTypeSerializer(serializers.ModelSerializer):
+    """Serializer for AddressType model"""
 
     class Meta:
-        model = Address
+        model = AddressType
         fields = "__all__"
 
 
@@ -80,6 +81,23 @@ class StreetLabelSerializer(serializers.ModelSerializer):
 class StreetSerializer(serializers.ModelSerializer):
     """Serializer for Street model"""
 
+    label = StreetLabelSerializer(read_only=True, many=False)
+
     class Meta:
         model = Street
+        fields = "__all__"
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    """Serializer for Address model"""
+
+    country = CountrySerializer(read_only=True, many=False)
+    department = DepartmentSerializer(read_only=True, many=False)
+    region = RegionSerializer(read_only=True, many=False)
+    city = CitySerializer(read_only=True, many=False)
+    street = StreetSerializer(read_only=True, many=False)
+    address_type = AddressTypeSerializer(read_only=True)
+
+    class Meta:
+        model = Address
         fields = "__all__"

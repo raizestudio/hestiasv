@@ -3,6 +3,18 @@
     "model": "geosys.city",
     "pk": 1,
     "fields": {
+      "name": "Joué-lès-Tours",
+      "zip_code": "37122",
+      "postal_code": "37300",
+      "slug": "joue-les-tours",
+      "city_type": 1,
+      "department": 38
+    }
+  },
+  {
+    "model": "geosys.city",
+    "pk": 2,
+    "fields": {
       "name": "Tours",
       "zip_code": "37261",
       "postal_code": "37000",

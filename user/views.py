@@ -1,20 +1,6 @@
 from django.core.mail import send_mail
 from django.shortcuts import render
-
 from django.utils import timezone
-
-from rest_access_policy import AccessViewSetMixin
-from rest_framework import status, viewsets
-from rest_framework.decorators import action
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-
-from rest_access_policy import AccessViewSetMixin
-from rest_framework import status, viewsets
-from rest_framework.decorators import action
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-
 from rest_access_policy import AccessViewSetMixin
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
@@ -40,6 +26,7 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
     pagination_class = DefaultPageNumberPagination
+    lookup_field = "username"
 
     def list(self, request, *args, **kwargs) -> Response:
         queryset = self.get_queryset()
@@ -49,6 +36,19 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def retrieve(self, request, *args, **kwargs) -> Response:
+        username = kwargs.get("username")
+        if not username:
+            return Response({"detail": "Username is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return Response({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = self.get_serializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @action(detail=False, methods=["get"], url_path="search", url_name="search")
@@ -103,7 +103,6 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         send_mail("Votre compte en quelques minutes.", f"Validez votre inscription en cliquant sur le lien suivant: {activation_link} ", "no-reply@hestia.com", [email])
         return Response({"detail": "User created", "user": UserSerializer(_user).data}, status=status.HTTP_201_CREATED)
 
-
     @action(detail=False, methods=["get"], url_path="retrieve-dashboard", url_name="retrieve_dashboard")
     def retrieve_dashboard(self, request, *args, **kwargs) -> Response:
         user = request.user
@@ -120,6 +119,20 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
             return Response(dashboard, status=status.HTTP_200_OK)
 
         return Response({"detail": "No dashboard for you."}, status=status.HTTP_200_OK)
+
+    @action(detail=False, methods=["post"], url_path="upload/avatar", url_name="avatar")
+    def upload_user_avatar(self, request, *args, **kwargs) -> Response:
+        user = request.user
+        avatar = request.data.get("avatar")
+
+        print(request.data)
+        print(request.user)
+        if not avatar:
+            return Response({"detail": "Avatar is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.avatar = avatar
+        user.save()
+        return Response({"detail": "Avatar uploaded", "user": UserSerializer(user).data}, status=status.HTTP_200_OK)
 
 
 class GroupViewSet(viewsets.ModelViewSet):

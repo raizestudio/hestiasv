@@ -3,17 +3,29 @@
     "model": "core.menu",
     "pk": 1,
     "fields": {
-      "name": "Demandes",
-      "description": "Menu demandes de service",
-      "url": "/orders",
+      "name": "Dashboard",
+      "description": "Dashboard",
+      "url": "/dashboard",
       "order": 1,
       "icon": "ConfigurationWheelIcon",
-      "groups": ["GR-USR"]
+      "groups": ["GR-USR", "GR-AGY", "GR-SEL", "GR-ADM", "GR-STF"]
     }
   },
   {
     "model": "core.menu",
     "pk": 2,
+    "fields": {
+      "name": "Demandes",
+      "description": "Menu demandes de service",
+      "url": "/orders",
+      "order": 1,
+      "icon": "ConfigurationWheelIcon",
+      "groups": ["GR-USR", "GR-AGY", "GR-STF"]
+    }
+  },
+  {
+    "model": "core.menu",
+    "pk": 3,
     "fields": {
       "name": "Missions",
       "description": "Menu demandes de service",
@@ -25,7 +37,7 @@
   },
   {
     "model": "core.menu",
-    "pk": 3,
+    "pk": 4,
     "fields": {
       "name": "Administration",
       "description": "Menu administration",
@@ -37,11 +49,11 @@
   },
   {
     "model": "core.menu",
-    "pk": 4,
+    "pk": 5,
     "fields": {
       "name": "Paramètres",
       "description": "Menu configuration",
-      "url": "/configuration",
+      "url": "/settings",
       "order": 1,
       "icon": "ConfigurationWheelIcon",
       "groups": ["GR-ADM"]
