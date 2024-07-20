@@ -1,0 +1,23 @@
+[
+  {
+    "model": "geosys.addresstype",
+    "pk": 1,
+    "fields": {
+      "name": "domicile"
+    }
+  },
+  {
+    "model": "geosys.addresstype",
+    "pk": 2,
+    "fields": {
+      "name": "bureau"
+    }
+  },
+  {
+    "model": "geosys.addresstype",
+    "pk": 3,
+    "fields": {
+      "name": "autre"
+    }
+  }
+]

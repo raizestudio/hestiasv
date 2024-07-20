@@ -8,8 +8,8 @@ class AddressType(models.Model):
     name = models.CharField(_("Nom"), max_length=255)
 
     class Meta:
-        verbose_name = _("Type d'adresse")
-        verbose_name_plural = _("Types d'adresse")
+        verbose_name = _("Type d'addresse")
+        verbose_name_plural = _("Types d'addresse")
 
     def __str__(self):
         return self.name
@@ -27,9 +27,11 @@ class Address(models.Model):
     city = models.ForeignKey("geosys.City", on_delete=models.CASCADE)
     street = models.ForeignKey("geosys.Street", on_delete=models.CASCADE)
 
+    address_type = models.ForeignKey("geosys.AddressType", on_delete=models.CASCADE)
+
     class Meta:
-        verbose_name = _("Adresse")
-        verbose_name_plural = _("Adresses")
+        verbose_name = _("Addresse")
+        verbose_name_plural = _("Addresses")
 
     def __str__(self):
         return self.name
@@ -55,6 +57,7 @@ class Country(models.Model):
 
     iso_name = models.CharField(_("Nom ISO"), max_length=255)
     name = models.CharField(_("Nom"), max_length=255, unique=True)
+    short_name = models.CharField(_("Nom court"), max_length=255, null=True)
     numeric_code = models.CharField(_("Code numérique"), max_length=255, unique=True)
     alpha_3_code = models.CharField(_("Code alpha-3"), max_length=255, unique=True)
     alpha_2_code = models.CharField(_("Code alpha-2"), max_length=255, unique=True, primary_key=True)

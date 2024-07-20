@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from geosys.serializers import AddressSerializer
 from user.models import Group, Role, User, UserPreferences, UserSecurity
 
 
@@ -33,7 +34,8 @@ class RoleSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     role = RoleSerializer(read_only=True)
+    addresses = AddressSerializer(read_only=True, many=True)
 
     class Meta:
         model = User
-        fields = "__all__"
+        exclude = ["password"]

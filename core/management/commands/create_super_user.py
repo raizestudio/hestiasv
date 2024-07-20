@@ -2,14 +2,10 @@ from django.contrib.auth.management.commands.createsuperuser import (
     Command as CreateSuperUserCommand,
 )
 from django.core.management import CommandError
-from django.utils.translation import gettext as _
-
-
 from django.utils import timezone
-
-
 from django.utils.translation import gettext as _
 
+from geosys.models import Address
 from user.models import Role, UserPreferences, UserSecurity
 
 
@@ -37,7 +33,9 @@ class Command(CreateSuperUserCommand):
             user.set_email(email)
             user.set_first_name("John")
             user.set_last_name("Doe")
-            user.role = Role.objects.get(code="RO-ADM")
+            user.set_role(Role.objects.get(code="RO-ADM"))
+            user.set_address(Address.objects.get(pk=1))
+            user.set_address(Address.objects.get(pk=2))
             user.save()
 
             UserPreferences.objects.get_or_create(user=user, defaults={"language": "fr", "theme": "primary"})

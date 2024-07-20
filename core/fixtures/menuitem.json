@@ -6,7 +6,7 @@
       "name": "Demandes",
       "description": "Menu configuration",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/orders",
       "icon": ""
     }
@@ -18,7 +18,7 @@
       "name": "Missions",
       "description": "Menu configuration",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/missions",
       "icon": ""
     }
@@ -30,7 +30,7 @@
       "name": "Utilisateurs",
       "description": "Menu administration utilisateurs",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/users",
       "icon": ""
     }
@@ -42,7 +42,7 @@
       "name": "Services",
       "description": "Menu administration services",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/services",
       "icon": ""
     }
@@ -54,7 +54,7 @@
       "name": "Lieux",
       "description": "Menu administration des lieux",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/places",
       "icon": ""
     }
@@ -66,7 +66,7 @@
       "name": "References de devis",
       "description": "Menu administration des references de devis",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/quotations/references",
       "icon": ""
     }
@@ -78,7 +78,7 @@
       "name": "Devis",
       "description": "Menu administration des devis",
       "order": 1,
-      "menu": 3,
+      "menu": 4,
       "url": "/administration/quotations",
       "icon": ""
     }
@@ -90,8 +90,8 @@
       "name": "Demandes ouvertes",
       "description": "Menu administration utilisateurs",
       "order": 1,
-      "menu": 1,
-      "url": "/orders?status=OPEN",
+      "menu": 2,
+      "url": "/orders/open",
       "icon": ""
     }
   },
@@ -102,7 +102,7 @@
       "name": "Application",
       "description": "Menu administration des paramètres de l'application",
       "order": 1,
-      "menu": 4,
+      "menu": 5,
       "url": "/settings/app",
       "icon": ""
     }

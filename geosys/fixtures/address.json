@@ -4,11 +4,27 @@
     "pk": 1,
     "fields": {
       "name": "root address",
+      "label": "root maison",
       "country": "FR",
       "region": 4,
       "department": 38,
       "city": 1,
-      "street": 1
+      "street": 1,
+      "address_type": 1
+    }
+  },
+  {
+    "model": "geosys.address",
+    "pk": 2,
+    "fields": {
+      "name": "root address",
+      "label": "root bureau",
+      "country": "FR",
+      "region": 4,
+      "department": 38,
+      "city": 2,
+      "street": 2,
+      "address_type": 2
     }
   }
 ]
