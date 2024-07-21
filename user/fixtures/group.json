@@ -5,7 +5,7 @@
       "code": "GR-ADM",
       "name": "admin",
       "description": "Groupe administrateur",
-      "color": "#FFC0CB",
+      "color": "#de4340",
       "slug": "admin"
     }
   },
@@ -15,7 +15,7 @@
       "code": "GR-STF",
       "name": "staff",
       "description": "Groupe du personnel",
-      "color": "#00FF00",
+      "color": "#67cc60",
       "slug": "staff"
     }
   },
@@ -25,7 +25,7 @@
       "code": "GR-USR",
       "name": "user",
       "description": "Groupe des utilisateurs",
-      "color": "#0000FF",
+      "color": "#6079cc",
       "slug": "user"
     }
   },
@@ -35,7 +35,7 @@
       "code": "GR-AGY",
       "name": "agency",
       "description": "Groupe des agences",
-      "color": "#FF0000",
+      "color": "#ccbf60",
       "slug": "agency"
     }
   },
@@ -45,7 +45,7 @@
       "code": "GR-SEL",
       "name": "self employed",
       "description": "Groupe des professionnels indépendants",
-      "color": "#FF0000",
+      "color": "#e3ab52",
       "slug": "self-employed"
     }
   }

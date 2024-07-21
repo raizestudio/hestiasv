@@ -3,7 +3,7 @@ from rest_access_policy import AccessPolicy
 
 class ServiceAccessPolicy(AccessPolicy):
     statements = [
-        {"action": ["list"], "principal": "*", "effect": "allow"},
+        {"action": ["list", "update", "partial_update"], "principal": "*", "effect": "allow"},
         {"action": ["create", "destroy"], "principal": "*", "effect": "allow", "condition": "is_admin"},
         # {"action": ["publish", "unpublish"], "principal": ["group:editor"], "effect": "allow"},
         # {"action": ["destroy"], "principal": ["*"], "effect": "allow", "condition": "is_author"},

@@ -1,0 +1,11 @@
+[
+  {
+    "model": "quotation.quotation",
+    "pk": 1,
+    "fields": {
+      "label": "Quotation 1",
+      "description": "Quotation description 1",
+      "quotation_references": [1]
+    }
+  }
+]

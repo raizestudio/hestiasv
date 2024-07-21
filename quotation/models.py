@@ -21,16 +21,38 @@ class Quotation(models.Model):
         return self.label
 
 
+class QuotationReferenceScope(models.Model):
+
+    continent = models.ManyToManyField(
+        "geosys.Continent",
+    )
+    country = models.ManyToManyField(
+        "geosys.Country",
+    )
+    department = models.ManyToManyField(
+        "geosys.Department",
+    )
+    city = models.ManyToManyField(
+        "geosys.City",
+    )
+
+    agency = models.ManyToManyField(
+        "pro.Enterprise",
+    )
+
+    self_employed = models.ManyToManyField(
+        "pro.SelfEmployed",
+    )
+
+
 class QuotationReference(models.Model):
 
     label = models.CharField(max_length=255)
     description = models.TextField()
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE, null=True)
 
-    to_content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, null=True)
-    to_object_id = models.PositiveIntegerField(null=True)
-    to = GenericForeignKey("to_content_type", "to_object_id")  # 'to' which geographical location this quotation is for
+    quotation_reference_scope = models.ForeignKey(QuotationReferenceScope, on_delete=models.CASCADE, null=True, related_name="scope")
 
     class Meta:
         verbose_name = _("Quotation Reference")

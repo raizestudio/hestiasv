@@ -1,6 +1,8 @@
 import factory
 from faker import Faker
 
+from user.tests.factories.factory_role import RoleFactory
+
 fake = Faker()
 
 
@@ -13,4 +15,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = factory.LazyAttribute(lambda _: fake.user_name())
     password = factory.LazyAttribute(lambda _: fake.password())
     email = factory.LazyAttribute(lambda _: fake.email())
-    # role = factory.LazyAttribute(lambda _: fake.random_element(elements=("user", "admin", "client", "driver")))
+    first_name = factory.LazyAttribute(lambda _: fake.first_name())
+    last_name = factory.LazyAttribute(lambda _: fake.last_name())
+    role = factory.SubFactory(RoleFactory)
