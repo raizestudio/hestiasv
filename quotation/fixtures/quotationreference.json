@@ -6,6 +6,17 @@
       "label": "Quotation Reference",
       "description": "Quotation Reference",
       "service": 1,
+      "place": 1,
+      "quotation_reference_scope": 1
+    }
+  },
+  {
+    "model": "quotation.quotationreference",
+    "pk": 2,
+    "fields": {
+      "label": "Quotation Reference 2",
+      "description": "Quotation Reference 2",
+      "service": 1,
       "place": 1
     }
   }

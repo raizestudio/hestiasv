@@ -124,6 +124,8 @@ class SessionViewSet(viewsets.ModelViewSet):
                 data = session.data.copy()
                 data["token"] = _token.token
                 data["refresh"] = _refresh.refresh
+                _user.last_login = session.data["created_at"]
+                _user.save()
                 data["user"] = UserSerializer(_user).data
                 return Response(data, status=status.HTTP_201_CREATED)
 

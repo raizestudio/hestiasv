@@ -39,6 +39,30 @@
     "model": "core.menuitem",
     "pk": 4,
     "fields": {
+      "name": "Agences",
+      "description": "Menu administration agence",
+      "order": 1,
+      "menu": 4,
+      "url": "/administration/agencies",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 5,
+    "fields": {
+      "name": "Indépendants",
+      "description": "Menu administration des indépendants",
+      "order": 1,
+      "menu": 4,
+      "url": "/administration/independents",
+      "icon": ""
+    }
+  },
+  {
+    "model": "core.menuitem",
+    "pk": 6,
+    "fields": {
       "name": "Services",
       "description": "Menu administration services",
       "order": 1,
@@ -49,7 +73,7 @@
   },
   {
     "model": "core.menuitem",
-    "pk": 5,
+    "pk": 7,
     "fields": {
       "name": "Lieux",
       "description": "Menu administration des lieux",
@@ -61,7 +85,7 @@
   },
   {
     "model": "core.menuitem",
-    "pk": 6,
+    "pk": 8,
     "fields": {
       "name": "References de devis",
       "description": "Menu administration des references de devis",
@@ -73,7 +97,7 @@
   },
   {
     "model": "core.menuitem",
-    "pk": 7,
+    "pk": 9,
     "fields": {
       "name": "Devis",
       "description": "Menu administration des devis",
@@ -85,7 +109,7 @@
   },
   {
     "model": "core.menuitem",
-    "pk": 8,
+    "pk": 9,
     "fields": {
       "name": "Demandes ouvertes",
       "description": "Menu administration utilisateurs",
@@ -97,7 +121,7 @@
   },
   {
     "model": "core.menuitem",
-    "pk": 9,
+    "pk": 11,
     "fields": {
       "name": "Application",
       "description": "Menu administration des paramètres de l'application",

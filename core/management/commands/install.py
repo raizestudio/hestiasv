@@ -25,6 +25,12 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> str | None:
         sys.stdout.write(self.style.NOTICE("Install is now executing.\n"))
         call_command("makemigrations")
+        call_command("flush", "--noinput")
+        call_command("migrate")
         call_command("load_all_fixtures")
         call_command("create_super_user", "--username", "root", "--password", "root", "--email", "r@r.com", "--noinput")
         call_command("create_dev_users")
+        call_command("loaddata", "service")
+        call_command("loaddata", "quotationreference")
+        call_command("loaddata", "quotation")
+        call_command("assign_users")
