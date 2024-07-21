@@ -1,7 +1,7 @@
 import pytest
 
 from pro.models import Enterprise
-from pro.tests.factories.factory_entreprise import EnterpriseFactory
+from pro.tests.factories.factory_enterprise import EnterpriseFactory
 
 pytestmark = pytest.mark.django_db
 

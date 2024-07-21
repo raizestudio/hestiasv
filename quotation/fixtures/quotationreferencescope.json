@@ -1,0 +1,9 @@
+[
+  {
+    "model": "quotation.quotationreferencescope",
+    "pk": 1,
+    "fields": {
+      "city": [1]
+    }
+  }
+]

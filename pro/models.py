@@ -11,9 +11,13 @@ class Pro(models.Model):
     siren = models.CharField(_("SIREN"), max_length=255)
     creation_date = models.DateField(_("Date de création"))
     slug = models.SlugField(_("Slug"), max_length=255)
+    is_active = models.BooleanField(_("Actif"), default=True)
+    created_at = models.DateTimeField(_("Crée le"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("Modifié le"), auto_now=True)
 
     phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
     emails = models.ManyToManyField("geosys.Email", verbose_name=_("Emails"))
+    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
 
     class Meta:
         abstract = True
@@ -36,13 +40,14 @@ class GroupPro(models.Model):
         return self.name
 
 
-class EnterpriseUser(models.Model):
+class EnterpriseMember(models.Model):
     """Model for storing enterprise users"""
 
     user = models.ForeignKey("user.User", verbose_name=_("Utilisateur"), on_delete=models.CASCADE)
     position = models.CharField(_("Rôle"), max_length=255)
 
     date_joined = models.DateTimeField(_("Date de création"), auto_now_add=True)
+    enterprise = models.ForeignKey("pro.Enterprise", verbose_name=_("Agence"), on_delete=models.CASCADE, related_name="members")
 
     class Meta:
         verbose_name = _("Utilisateur d'agence")
@@ -56,7 +61,6 @@ class Enterprise(Pro, models.Model):
     """Model for storing agencies"""
 
     group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
-    users = models.ManyToManyField("pro.EnterpriseUser", verbose_name=_("Utilisateurs"))
 
     class Meta:
         verbose_name = _("Agence")
@@ -68,8 +72,8 @@ class Enterprise(Pro, models.Model):
     def add_user(self, user, position):
         """Method for adding user to agency"""
 
-        enterprise_user = EnterpriseUser.objects.create(user=user, position=position)
-        self.users.add(enterprise_user)
+        _enterprise_member = EnterpriseMember.objects.create(user=user, position=position)
+        self.members.add(_enterprise_member)
 
 
 class SelfEmployed(Pro, models.Model):

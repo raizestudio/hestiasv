@@ -1,3 +1,4 @@
+from rest_flex_fields import FlexFieldsModelSerializer
 from rest_framework import serializers
 
 from geosys.serializers import AddressSerializer
@@ -18,13 +19,13 @@ class UserSecuritySerializer(serializers.ModelSerializer):
         read_only_fields = ["id", "user"]
 
 
-class GroupSerializer(serializers.ModelSerializer):
+class GroupSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Group
         fields = "__all__"
 
 
-class RoleSerializer(serializers.ModelSerializer):
+class RoleSerializer(FlexFieldsModelSerializer):
     group = GroupSerializer(read_only=True)
 
     class Meta:
@@ -32,10 +33,11 @@ class RoleSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(FlexFieldsModelSerializer):
     role = RoleSerializer(read_only=True)
     addresses = AddressSerializer(read_only=True, many=True)
 
     class Meta:
         model = User
         exclude = ["password"]
+        expendable_fields = {"role": RoleSerializer, "addresses": (AddressSerializer, {"many": True})}
