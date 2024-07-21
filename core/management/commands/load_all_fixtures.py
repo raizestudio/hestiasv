@@ -54,6 +54,7 @@ EXCLUDED_MODELS = [
 ]
 
 
+
 class Command(BaseCommand):
     """Load all fixtures based on exclusion rules defined in EXLUDED_APPS and EXCLUDED_MODELS
 
