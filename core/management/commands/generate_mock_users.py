@@ -5,22 +5,8 @@ from typing import Any
 
 from django.core.management import BaseCommand, CommandError
 
-from user.models import User
-
-
-def generate_username() -> str:
-    username_length = random.randint(5, 10)
-    username = "".join(random.choices(string.ascii_lowercase, k=username_length))
-    return username
-
-
-def generate_email() -> str:
-    email = f"{generate_username()}@{generate_username()}.com"
-    return email
-
-
-def pick_random_role(admin_allowed) -> str:
-    return random.randint(1 if admin_allowed else 2, 3)
+from user.models import Role, User
+from user.tests.factories.factory_base_user import UserFactory
 
 
 class Command(BaseCommand):
@@ -45,6 +31,8 @@ class Command(BaseCommand):
         # admin = options.get("admin")
 
         for _ in range(int(number)):
-            _user = User.objects.create_user(username=generate_username(), password=generate_username(), email=generate_email())
+            role = random.choices(Role.objects.all(), k=1)
+            user = UserFactory(role=role[0])
+            user.save()
 
         sys.stdout.write(self.style.SUCCESS(f"Successfully create {number} users.\n"))

@@ -10,6 +10,8 @@ ORDERED_MODELS = [
     "user.role",
     "core.menu",
     "core.menuitem",
+    "core.tag",
+    "core.category",
     "geosys.continent",
     "geosys.country",
     "geosys.region",
@@ -19,6 +21,7 @@ ORDERED_MODELS = [
     "geosys.streetlabel",
     "geosys.street",
     "geosys.addresstype",
+    "quotation.quotationreferencescope",
 ]
 
 EXLUDED_APPS = [
@@ -33,7 +36,22 @@ EXLUDED_APPS = [
     "admin",
 ]
 
-EXCLUDED_MODELS = ["menu", "menuitem", "continent", "country", "region", "department", "citytype", "city", "streetlabel", "street", "adressetype"]
+EXCLUDED_MODELS = [
+    "menu",
+    "menuitem",
+    "tag",
+    "category",
+    "continent",
+    "country",
+    "region",
+    "department",
+    "citytype",
+    "city",
+    "streetlabel",
+    "street",
+    "adressetype",
+    "quotationreferencescope",
+]
 
 
 class Command(BaseCommand):
@@ -47,9 +65,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         models_to_retry = []
-
-        call_command("flush", "--noinput")
-        call_command("migrate")
 
         for model_name in ORDERED_MODELS:
             model = apps.get_model(model_name)

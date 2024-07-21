@@ -4,11 +4,11 @@ from faker import Faker
 fake = Faker()
 
 
-class EnterpriseFactory(factory.django.DjangoModelFactory):
-    """Enterprise factory"""
+class SelfEmployedFactory(factory.django.DjangoModelFactory):
+    """SelfEmployed factory"""
 
     class Meta:
-        model = "pro.Enterprise"
+        model = "pro.SelfEmployed"
 
     name = factory.LazyAttribute(lambda _: fake.word())
     legal_status = factory.LazyAttribute(lambda _: fake.word())

@@ -1,6 +1,7 @@
+from rest_flex_fields import FlexFieldsModelSerializer
 from rest_framework import serializers
 
-from core.models import AppSetting, Menu, MenuItem
+from core.models import AppSetting, Category, Menu, MenuItem, Tag
 
 
 class MenuSerializer(serializers.ModelSerializer):
@@ -18,4 +19,16 @@ class MenuItemSerializer(serializers.ModelSerializer):
 class AppSettingSerializer(serializers.ModelSerializer):
     class Meta:
         model = AppSetting
+        fields = "__all__"
+
+
+class TagSerializer(FlexFieldsModelSerializer):
+    class Meta:
+        model = Tag
+        fields = "__all__"
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
         fields = "__all__"

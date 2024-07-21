@@ -4,7 +4,14 @@
     "pk": 1,
     "fields": {
       "name": "Service 1",
-      "description": "Service 1 description"
+      "description": "Service 1 description",
+      "estimated_duration": "0:30:00",
+      "created_at": "2020-01-01T00:00:00Z",
+      "updated_at": "2020-01-01T00:00:00Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "tags": [1, 2],
+      "categories": [1]
     }
   }
 ]

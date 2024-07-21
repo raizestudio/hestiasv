@@ -1,0 +1,10 @@
+[
+  {
+    "model": "pro.grouppro",
+    "pk": 1,
+    "fields": {
+      "name": "Société Générale",
+      "description": "Société Générale est une banque française"
+    }
+  }
+]
