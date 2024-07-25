@@ -1,36 +1,33 @@
 from rest_access_policy import AccessViewSetMixin
-from rest_framework import status, viewsets
+from rest_framework import filters, status, viewsets
 from rest_framework.response import Response
 
+from asset.models import Asset
+from asset.policies import AssetAccessPolicy
+from asset.serializers import AssetSerializer
 from core.paginations import DefaultPageNumberPagination
-from quotation.models import Quotation, QuotationReference
-from quotation.serializers import QuotationReferenceSerializer, QuotationSerializer
 
 
-class QuotationReferenceViewSet(viewsets.ModelViewSet):
-    """ViewSet for QuotationReference model"""
-
-    queryset = QuotationReference.objects.all()
-    serializer_class = QuotationReferenceSerializer
+class AssetViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
+    queryset = Asset.objects.all()
+    serializer_class = AssetSerializer
+    access_policy = AssetAccessPolicy
     pagination_class = DefaultPageNumberPagination
 
     def get_serializer_context(self):
         """Extra context provided to the serializer class."""
-        context = super(QuotationReferenceViewSet, self).get_serializer_context()
+        context = super(AssetViewSet, self).get_serializer_context()
         context.update({"request": self.request})
         return context
 
     def list(self, request, *args, **kwargs):
         objects_param = request.query_params.get("objects", None)
         if objects_param == "all":
-            queryset = QuotationReference.objects.all_objects()
+            queryset = Asset.objects.all_objects()
         elif objects_param == "deleted":
-            queryset = QuotationReference.objects.deleted_objects()
+            queryset = Asset.objects.deleted_objects()
         else:
             queryset = self.get_queryset()
-
-        # filters
-        queryset = self.filter_queryset(queryset)
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -43,9 +40,9 @@ class QuotationReferenceViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         objects_param = request.query_params.get("objects", None)
         if objects_param == "all":
-            instance = QuotationReference.objects.all_objects().get(pk=kwargs.get("pk"))
+            instance = Asset.objects.all_objects().get(pk=kwargs.get("pk"))
         elif objects_param == "deleted":
-            instance = QuotationReference.objects.deleted_objects().get(pk=kwargs.get("pk"))
+            instance = Asset.objects.deleted_objects().get(pk=kwargs.get("pk"))
         else:
             instance = self.get_object()
 
@@ -60,17 +57,16 @@ class QuotationReferenceViewSet(viewsets.ModelViewSet):
         return super().update(request, *args, **kwargs)
 
     def partial_update(self, request, *args, **kwargs):
-        instance = QuotationReference.objects.all_objects().get(pk=kwargs.get("pk"))
-        if instance.deleted_at is not None:
+        restore = request.GET.get("restore") in ["true", "True"]
+        instance = Asset.objects.all_objects().get(pk=kwargs.get("pk"))
+        if restore and instance.deleted_at is not None:
             instance.restore(strict=False)
-            return Response(self.get_serializer(instance).data, status=status.HTTP_200_OK)
-        return super().partial_update(request, *args, **kwargs)
+
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def destroy(self, request, *args, **kwargs):
         return super().destroy(request, *args, **kwargs)
-
-
-class QuotationViewSet(viewsets.ModelViewSet):
-    queryset = Quotation.objects.all()
-    serializer_class = QuotationSerializer
-    pagination_class = DefaultPageNumberPagination

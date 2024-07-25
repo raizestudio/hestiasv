@@ -114,6 +114,14 @@ class SoftDeleteManager(models.Manager):
         """Queryset du modèle"""
         return SoftDeleteQuerySet(self.model, using=self._db).filter(deleted_at__isnull=True)
 
+    def deleted_objects(self) -> SoftDeleteQuerySet:
+        """Queryset des objets supprimés"""
+        return SoftDeleteQuerySet(self.model, using=self._db).filter(deleted_at__isnull=False)
+
+    def all_objects(self) -> SoftDeleteQuerySet:
+        """Queryset de tous les objets"""
+        return SoftDeleteQuerySet(self.model, using=self._db)
+
 
 class SoftDelete(models.Model):
     """Soft delete modèle"""

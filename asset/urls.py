@@ -1,10 +1,10 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from place.views import PlaceViewSet
+from asset.views import AssetViewSet
 
 router = DefaultRouter()
-router.register("", PlaceViewSet, basename="place")
+router.register("", AssetViewSet, basename="asset")
 
 urlpatterns = router.urls
 

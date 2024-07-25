@@ -22,7 +22,7 @@ class MenuViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
     @action(detail=False, methods=["get"], url_path="user-menu")
     def user_menu(self, request, *args, **kwargs):
         response = []
-        print(f"DEBUG: {self.queryset.filter(groups=request.user.role.group.code)}")
+        # print(f"DEBUG: {self.queryset.filter(groups=request.user.role.group.code)}")
         # print(f"DEBUG: {self.queryset.groups.filter(code=request.user.role.group.code)}")
         _menus = self.queryset.filter(groups=request.user.role.group.code)
         menus = MenuSerializer(_menus, many=True)
@@ -59,5 +59,3 @@ class AppSettingViewSet(viewsets.ModelViewSet):
 
     def partial_update(self, request, *args, **kwargs):
         return super().partial_update(request, *args, **kwargs)
-
-

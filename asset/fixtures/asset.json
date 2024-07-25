@@ -1,11 +1,10 @@
 [
   {
-    "model": "service.service",
+    "model": "asset.asset",
     "pk": 1,
     "fields": {
-      "name": "Service 1",
-      "description": "Service 1 description",
-      "estimated_duration": "0:30:00",
+      "name": "Asset 1",
+      "description": "Asset 1 description",
       "created_at": "2020-01-01T00:00:00Z",
       "updated_at": "2020-01-01T00:00:00Z",
       "author": 1,

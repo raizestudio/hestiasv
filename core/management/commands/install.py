@@ -31,6 +31,7 @@ class Command(BaseCommand):
         call_command("create_super_user", "--username", "root", "--password", "root", "--email", "r@r.com", "--noinput")
         call_command("create_dev_users")
         call_command("loaddata", "service")
+        call_command("loaddata", "asset")
         call_command("loaddata", "quotationreference")
         call_command("loaddata", "quotation")
         call_command("assign_users")

@@ -1,7 +1,7 @@
 import pytest
 
-from pro.models import Enterprise
-from pro.tests.factories.factory_enterprise import EnterpriseFactory
+from asset.models import Asset
+from asset.tests.factories.factory_asset import AssetFactory
 
 pytestmark = pytest.mark.django_db
 
@@ -11,13 +11,13 @@ class TestUsers:
 
     def test_service_creation(self):
         """Test asset creation"""
-        asset = EnterpriseFactory()
-        assert Enterprise.objects.filter(name=asset.name).exists()
+        asset = AssetFactory()
+        assert Asset.objects.filter(name=asset.name).exists()
 
     def test_service_update(self):
         """Test asset update"""
-        asset = EnterpriseFactory()
+        asset = AssetFactory()
         new_name = "New name"
         asset.name = new_name
         asset.save()
-        assert Enterprise.objects.filter(name=new_name).exists()
+        assert Asset.objects.filter(name=new_name).exists()

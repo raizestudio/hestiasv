@@ -17,7 +17,7 @@ urlpatterns += [
     path("api/authentication/", include("authentication.urls")),  # Authentication API
     path("api/geosys/", include("geosys.urls")),  # Geosys API
     path("api/services/", include("service.urls")),  # Service API
-    path("api/places/", include("place.urls")),  # Place API
+    path("api/assets/", include("asset.urls")),  # Asset API
     path("api/quotations/", include("quotation.urls")),  # Quotation API
     path("api/pros/", include("pro.urls")),  # Pro API
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

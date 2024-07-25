@@ -21,6 +21,7 @@ ORDERED_MODELS = [
     "geosys.streetlabel",
     "geosys.street",
     "geosys.addresstype",
+    "geosys.currency",
     "quotation.quotationreferencescope",
 ]
 
@@ -50,9 +51,11 @@ EXCLUDED_MODELS = [
     "streetlabel",
     "street",
     "adressetype",
+    "service",
+    "asset",
+    "currency",
     "quotationreferencescope",
 ]
-
 
 
 class Command(BaseCommand):
