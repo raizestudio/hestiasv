@@ -20,14 +20,16 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "django_filters",
     "corsheaders",
     "channels",
     "core",
+    "history",
     "user",
     "authentication",
     "pro",
     "service",
-    "place",
+    "asset",
     "geosys",
     "contract",
     "quotation",
@@ -117,6 +119,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "authentication.permissions.BearerTokenAuthentication",
     ],
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 REST_AUTH_SERIALIZERS = {
@@ -142,4 +145,3 @@ EMAIL_HOST = "sandbox.smtp.mailtrap.io"
 EMAIL_HOST_USER = "ceeaecd782e2f0"
 EMAIL_HOST_PASSWORD = "16c47faf6811a4"
 EMAIL_PORT = "2525"
-

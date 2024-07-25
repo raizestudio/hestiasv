@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "Tag 1",
-      "color": "#FF0000"
+      "color": "#de4340"
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name": "Tag 2",
-      "color": "#00FF00"
+      "color": "#67cc60"
     }
   }
 ]

@@ -1,0 +1,101 @@
+[
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "US Dollar",
+      "iso_code": "USD",
+      "iso_number": "840",
+      "decimals": 2,
+      "symbol": "$",
+      "rank": 1
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Euro",
+      "iso_code": "EUR",
+      "iso_number": "978",
+      "decimals": 2,
+      "symbol": "€",
+      "rank": 2
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Pound Sterling",
+      "iso_code": "GBP",
+      "iso_number": "826",
+      "decimals": 2,
+      "symbol": "£",
+      "rank": 3
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Japanese Yen",
+      "iso_code": "JPY",
+      "iso_number": "392",
+      "decimals": 0,
+      "symbol": "¥",
+      "rank": 4
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Australian Dollar",
+      "iso_code": "AUD",
+      "iso_number": "036",
+      "decimals": 2,
+      "symbol": "$",
+      "rank": 5
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Canadian Dollar",
+      "iso_code": "CAD",
+      "iso_number": "124",
+      "decimals": 2,
+      "symbol": "$",
+      "rank": 6
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Swiss Franc",
+      "iso_code": "CHF",
+      "iso_number": "756",
+      "decimals": 2,
+      "symbol": "Fr",
+      "rank": 7
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Chinese Yuan",
+      "iso_code": "CNY",
+      "iso_number": "156",
+      "decimals": 2,
+      "symbol": "¥",
+      "rank": 8
+    }
+  },
+  {
+    "model": "geosys.currency",
+    "fields": {
+      "name": "Swedish Krona",
+      "iso_code": "SEK",
+      "iso_number": "752",
+      "decimals": 2,
+      "symbol": "kr",
+      "rank": 9
+    }
+  }
+]

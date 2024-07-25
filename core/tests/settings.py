@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     "user",
     "authentication",
     "service",
-    "place",
+    "asset",
     "geosys",
     "contract",
     "quotation",

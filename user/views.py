@@ -62,10 +62,10 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         if not term:
             return Response({"detail": "Term is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        print(f"DEBUG field: {field} - term: {term}")
+        # print(f"DEBUG field: {field} - term: {term}")
 
         users = User.objects.filter(username__icontains=term)
-        print(f"DEBUG users: {users}")
+        # print(f"DEBUG users: {users}")
         serializer = self.get_serializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

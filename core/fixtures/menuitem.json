@@ -75,11 +75,11 @@
     "model": "core.menuitem",
     "pk": 7,
     "fields": {
-      "name": "Lieux",
-      "description": "Menu administration des lieux",
+      "name": "Actifs",
+      "description": "Menu administration des actifs",
       "order": 1,
       "menu": 4,
-      "url": "/administration/places",
+      "url": "/administration/assets",
       "icon": ""
     }
   },

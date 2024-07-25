@@ -7,6 +7,7 @@ from geosys.models import (
     CityType,
     Continent,
     Country,
+    Currency,
     Department,
     Region,
     Street,
@@ -100,4 +101,12 @@ class AddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Address
+        fields = "__all__"
+
+
+class CurrencySerializer(serializers.ModelSerializer):
+    """Serializer for Currency model"""
+
+    class Meta:
+        model = Currency
         fields = "__all__"

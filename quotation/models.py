@@ -3,7 +3,10 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from place.models import Place
+from asset.models import Asset
+from core.models import SoftDelete
+from financial.models import Price
+from history.models import History
 from service.models import Service
 
 
@@ -45,18 +48,22 @@ class QuotationReferenceScope(models.Model):
     )
 
 
-class QuotationReference(models.Model):
+class QuotationReference(History, Price, SoftDelete):
 
     label = models.CharField(max_length=255)
-    description = models.TextField()
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    place = models.ForeignKey(Place, on_delete=models.CASCADE, null=True)
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE, null=True)
+    is_active = models.BooleanField(default=True)
 
     quotation_reference_scope = models.ForeignKey(QuotationReferenceScope, on_delete=models.CASCADE, null=True, related_name="scope")
+
+    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_reference_author", null=True, blank=True)
+    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_reference_maintainer", null=True, blank=True)
 
     class Meta:
         verbose_name = _("Quotation Reference")
         verbose_name_plural = _("Quotation References")
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.label

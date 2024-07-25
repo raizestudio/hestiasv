@@ -5,8 +5,8 @@ from typing import Any
 
 from django.core.management import BaseCommand, CommandError
 
+from asset.tests.factories.factory_asset import AssetFactory
 from core.models import Category, Tag
-from service.tests.factories.factory_service import ServiceFactory
 from user.models import User
 
 
@@ -27,15 +27,15 @@ class Command(BaseCommand):
         for _ in range(int(number)):
             _user = random.choices(User.objects.all(), k=1)
             try:
-                service = ServiceFactory(
+                asset = AssetFactory(
                     author=_user[0],
                     updated_by=_user[0],
                 )
                 _tags = random.choices(Tag.objects.all(), k=random.randint(1, 2))
                 _categories = random.choices(Category.objects.all(), k=random.randint(1, 2))
-                service.tags.set(_tags)
-                service.categories.set(_categories)
-                service.save()
+                asset.tags.set(_tags)
+                asset.categories.set(_categories)
+                asset.save()
             except Exception as e:
                 pass
-        sys.stdout.write(self.style.SUCCESS(f"Successfully create {number} services.\n"))
+        sys.stdout.write(self.style.SUCCESS(f"Successfully create {number} assets.\n"))
