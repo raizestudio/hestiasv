@@ -37,6 +37,22 @@ jobs:
       run: python manage.py makemigrations user
     - name: Makemigrations service
       run: python manage.py makemigrations service
+    - name: Makemigrations asset
+      run: python manage.py makemigrations asset
+    - name: Makemigrations authentication
+      run: python manage.py makemigrations authentication
+    - name: Makemigrations geosys
+      run: python manage.py makemigrations geosys
+    - name: Makemigrations history
+      run: python manage.py makemigrations history
+    - name: Makemigrations financial
+      run: python manage.py makemigrations financial
+    - name: Makemigrations quotation
+      run: python manage.py makemigrations quotation
+    - name: Makemigrations contract
+      run: python manage.py makemigrations contract
+    - name: Makemigrations dashboard
+      run: python manage.py makemigrations dashboard
     - name: Run migrations
       run: python manage.py install
     - name: Run tests
