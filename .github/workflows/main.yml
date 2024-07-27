@@ -39,6 +39,8 @@ jobs:
       run: python manage.py makemigrations service
     - name: Makemigrations asset
       run: python manage.py makemigrations asset
+    - name: Makemigrations pro
+      run: python manage.py makemigrations pro
     - name: Makemigrations authentication
       run: python manage.py makemigrations authentication
     - name: Makemigrations geosys
