@@ -8,7 +8,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-ARA",
-      "insee_code": "84",
+      "local_code": "84",
       "slug": "auvergne-rhone-alpes",
       "country": "FR"
     }
@@ -22,7 +22,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-BFC",
-      "insee_code": "27",
+      "local_code": "27",
       "slug": "bourgogne-franche-comte",
       "country": "FR"
     }
@@ -36,7 +36,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-BRE",
-      "insee_code": "53",
+      "local_code": "53",
       "slug": "bretagne",
       "country": "FR"
     }
@@ -50,7 +50,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-CVL",
-      "insee_code": "24",
+      "local_code": "24",
       "slug": "centre-val-de-loire",
       "country": "FR"
     }
@@ -64,7 +64,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-COR",
-      "insee_code": "94",
+      "local_code": "94",
       "slug": "corse",
       "country": "FR"
     }
@@ -78,7 +78,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-GES",
-      "insee_code": "44",
+      "local_code": "44",
       "slug": "grand-est",
       "country": "FR"
     }
@@ -92,7 +92,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-HDF",
-      "insee_code": "32",
+      "local_code": "32",
       "slug": "hauts-de-france",
       "country": "FR"
     }
@@ -106,7 +106,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-IDF",
-      "insee_code": "11",
+      "local_code": "11",
       "slug": "ile-de-france",
       "country": "FR"
     }
@@ -120,7 +120,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-NOR",
-      "insee_code": "28",
+      "local_code": "28",
       "slug": "normandie",
       "country": "FR"
     }
@@ -134,7 +134,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-NAQ",
-      "insee_code": "75",
+      "local_code": "75",
       "slug": "nouvelle-aquitaine",
       "country": "FR"
     }
@@ -148,7 +148,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-OCC",
-      "insee_code": "76",
+      "local_code": "76",
       "slug": "occitanie",
       "country": "FR"
     }
@@ -162,7 +162,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-PDL",
-      "insee_code": "52",
+      "local_code": "52",
       "slug": "pays-de-la-loire",
       "country": "FR"
     }
@@ -176,7 +176,7 @@
       "alpha_3_code": "",
       "alpha_2_code": "",
       "iso_3166_2_code": "FR-PAC",
-      "insee_code": "93",
+      "local_code": "93",
       "slug": "provence-alpes-cote-d-azur",
       "country": "FR"
     }
@@ -190,7 +190,7 @@
       "alpha_3_code": "GLP",
       "alpha_2_code": "GP",
       "iso_3166_2_code": "FR-971",
-      "insee_code": "01",
+      "local_code": "1",
       "slug": "guadeloupe",
       "country": "FR"
     }
@@ -204,7 +204,7 @@
       "alpha_3_code": "MTQ",
       "alpha_2_code": "MQ",
       "iso_3166_2_code": "FR-972",
-      "insee_code": "02",
+      "local_code": "2",
       "slug": "martinique",
       "country": "FR"
     }
@@ -218,7 +218,7 @@
       "alpha_3_code": "GUF",
       "alpha_2_code": "GF",
       "iso_3166_2_code": "FR-973R",
-      "insee_code": "973R",
+      "local_code": "973R",
       "slug": "guyane",
       "country": "FR"
     }
@@ -232,7 +232,7 @@
       "alpha_3_code": "REU",
       "alpha_2_code": "RE",
       "iso_3166_2_code": "FR-974",
-      "insee_code": "04",
+      "local_code": "4",
       "slug": "la-reunion",
       "country": "FR"
     }
@@ -246,7 +246,7 @@
       "alpha_3_code": "MYT",
       "alpha_2_code": "YT",
       "iso_3166_2_code": "",
-      "insee_code": "05",
+      "local_code": "5",
       "slug": "mayotte",
       "country": "FR"
     }

@@ -1,0 +1,44 @@
+[
+  {
+    "model": "history.timelineaction",
+    "pk": 1,
+    "fields": {
+      "name": "create"
+    }
+  },
+  {
+    "model": "history.timelineaction",
+    "pk": 2,
+    "fields": {
+      "name": "update"
+    }
+  },
+  {
+    "model": "history.timelineaction",
+    "pk": 3,
+    "fields": {
+      "name": "delete"
+    }
+  },
+  {
+    "model": "history.timelineaction",
+    "pk": 4,
+    "fields": {
+      "name": "restore"
+    }
+  },
+  {
+    "model": "history.timelineaction",
+    "pk": 5,
+    "fields": {
+      "name": "activate"
+    }
+  },
+  {
+    "model": "history.timelineaction",
+    "pk": 6,
+    "fields": {
+      "name": "deactivate"
+    }
+  }
+]

@@ -3,15 +3,31 @@ from rest_framework import serializers
 
 from asset.serializers import AssetSerializer
 from geosys.serializers import CurrencySerializer
+from pro.serializers import EnterpriseSerializer, SelfEmployedSerializer
 from quotation.models import Quotation, QuotationReference, QuotationReferenceScope
 from service.serializers import ServiceSerializer
 from user.serializers import UserSerializer
 
 
-class QuotationSerializer(serializers.ModelSerializer):
+class QuotationSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Quotation
         fields = "__all__"
+        expandable_fields = {
+            "author": UserSerializer,
+            "updated_by": UserSerializer,
+            "enterprise_accepted": EnterpriseSerializer,
+            "self_employed_accepted": SelfEmployedSerializer,
+            "quotation_references": ("quotation.serializers.QuotationReferenceSerializer", {"many": True}),
+        }
+        read_only_fields = ["created_at", "author"]
+
+    def create(self, validated_data):
+        """Create a new Quotation instance and assign the current user as the author"""
+        request = self.context.get("request", None)
+        if request and hasattr(request, "user"):
+            validated_data["author"] = request.user
+        return super(ServiceSerializer, self).create(validated_data)
 
 
 class QuotationReferenceScopeSerializer(serializers.ModelSerializer):

@@ -1,0 +1,10 @@
+[
+  {
+    "model": "geosys.language",
+    "pk": 1,
+    "fields": {
+      "name": "Français",
+      "slug": "francais"
+    }
+  }
+]

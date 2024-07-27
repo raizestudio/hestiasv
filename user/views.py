@@ -1,5 +1,6 @@
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives, send_mail
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.utils import timezone
 from rest_access_policy import AccessViewSetMixin
 from rest_framework import status, viewsets
@@ -94,13 +95,19 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         if not email:
             return Response({"detail": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        _user = User.objects.create(email=email, is_active=False)
+        _user = User.objects.create(username=User.generate_temporary_username(), email=email, is_active=False)
         email_code = UserSecurity.generate_email_validation_code()
         _user_security = UserSecurity.objects.create(user=_user, email_validation_code=email_code, email_validation_code_sent_at=timezone.now())
 
+        subject, from_email, to = "Votre inscription Hestia!", "no-reply@hestia.com", [email]
         # activation_link = request.build_absolute_uri(f"users/email/activate/{email_code}")
         activation_link = f"http://localhost:3000/user/activate/{email_code}"
-        send_mail("Votre compte en quelques minutes.", f"Validez votre inscription en cliquant sur le lien suivant: {activation_link} ", "no-reply@hestia.com", [email])
+        text_content = f"Validez votre inscription en cliquant sur le lien suivant: {activation_link}"
+        html_content = render_to_string("mail/activate_email.html", {"activation_link": activation_link})
+        msg = EmailMultiAlternatives(subject, text_content, from_email, to)
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+        # send_mail("Votre compte en quelques minutes.", f"Validez votre inscription en cliquant sur le lien suivant: {activation_link} ", "no-reply@hestia.com", [email])
         return Response({"detail": "User created", "user": UserSerializer(_user).data}, status=status.HTTP_201_CREATED)
 
     @action(detail=False, methods=["get"], url_path="retrieve-dashboard", url_name="retrieve_dashboard")
@@ -113,7 +120,18 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
                 status=status.HTTP_401_UNAUTHORIZED,
             )
 
-        dashboard = {"new_users": User.objects.all().count(), "new_enterprises": Enterprise.objects.all().count(), "new_pros": SelfEmployed.objects.all().count()}
+        dashboard = {
+            "new_users": User.objects.all().count(),
+            "new_enterprises": Enterprise.objects.all().count(),
+            "new_pros": SelfEmployed.objects.all().count(),
+        }
+
+        # Calculate new users over the last week
+        _users_w = User.objects.filter(date_joined__gte=timezone.now() - timezone.timedelta(days=7)).count()
+        _users_wm1 = User.objects.filter(date_joined__gte=timezone.now() - timezone.timedelta(days=14)).count() - _users_w
+
+        dashboard["new_users_week"] = _users_w
+        dashboard["new_users_week_pct"] = (_users_w / (_users_wm1 + _users_w)) * 100
 
         if user.role.group.code == "GR-ADM":
             return Response(dashboard, status=status.HTTP_200_OK)

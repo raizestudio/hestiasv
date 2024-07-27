@@ -5,6 +5,20 @@ from core.models import Category, SoftDelete, Tag
 from history.models import History
 
 
+class AssetManager(models.Manager):
+    """Manager for Asset model"""
+
+    pass
+
+
+class AssetQuerySet(models.QuerySet):
+    """QuerySet for Asset model"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self = self.select_related("author", "updated_by").prefetch_related("tags", "categories")
+
+
 class Asset(History, SoftDelete):
     """Model for storing assets"""
 

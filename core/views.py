@@ -3,6 +3,7 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
+from core.celery import debug_task
 from core.models import AppSetting, Menu, MenuItem
 from core.policies import MenuAccessPolicy
 from core.serializers import AppSettingSerializer, MenuItemSerializer, MenuSerializer
@@ -33,6 +34,7 @@ class MenuViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
             temp = menu.data.copy()
             temp["menu_items"] = menu_items.data
             response.append(temp)
+        debug_task()
         # _menu_items = MenuItem.objects.all()
         # menu_items = MenuItemSerializer(_menu_items, many=True)
 

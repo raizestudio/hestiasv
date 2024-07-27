@@ -68,6 +68,7 @@ class Country(models.Model):
     continent = models.ForeignKey("geosys.Continent", on_delete=models.CASCADE, related_name="country_continent")
     # TODO: maybe add sovereign state ( create a model for mondial organizations like UN, EU, etc. It can be a country too) for now owner_countries does the job
     owner_countries = models.ManyToManyField("geosys.Country", related_name="country_owner_countries")
+    country_data = models.OneToOneField("geosys.CountryData", on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = _("Pays")
@@ -78,6 +79,20 @@ class Country(models.Model):
         return self.name
 
 
+class CountryData(models.Model):
+    """Model for storing country data"""
+
+    phone_code = models.CharField(_("Code téléphonique"), max_length=255)
+    population = models.IntegerField(_("Population"))
+    area = models.FloatField(_("Superficie"))
+    density = models.FloatField(_("Densité"))
+    gpd = models.FloatField(_("PIB"))
+    gpd_per_capita = models.FloatField(_("PIB par habitant"))
+    currency = models.ForeignKey("geosys.Currency", on_delete=models.CASCADE)
+    main_language = models.ForeignKey("geosys.Language", on_delete=models.CASCADE)
+    languages = models.ManyToManyField("geosys.Language", related_name="country_languages")
+
+
 class CountryLevel(models.Model):
     """Model for storing country levels"""
 
@@ -86,7 +101,7 @@ class CountryLevel(models.Model):
     alpha_3_code = models.CharField(_("Code ISO 3166-1"), max_length=255)
     alpha_2_code = models.CharField(_("Code ISO 3166-1"), max_length=255)
     iso_3166_2_code = models.CharField(_("Code ISO 3166-2"), max_length=255)  # FR-CVL for Centre-Val de Loire
-    insee_code = models.CharField(_("Code INSEE"), max_length=255)  # Code INSEE for France
+    local_code = models.CharField(_("Code INSEE"), max_length=255)  # Code INSEE for France
     slug = models.SlugField(_("Slug"), max_length=255)
 
     class Meta:

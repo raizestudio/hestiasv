@@ -1,8 +1,11 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from core.models import SoftDelete
+from history.models import History
 
-class Pro(models.Model):
+
+class Pro(History, SoftDelete):
     """Model for storing base pro"""
 
     name = models.CharField(_("Nom"), max_length=255)
@@ -12,11 +15,12 @@ class Pro(models.Model):
     creation_date = models.DateField(_("Date de création"))
     slug = models.SlugField(_("Slug"), max_length=255)
     is_active = models.BooleanField(_("Actif"), default=True)
-    created_at = models.DateTimeField(_("Crée le"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("Modifié le"), auto_now=True)
+    # created_at = models.DateTimeField(_("Crée le"), auto_now_add=True)
+    # updated_at = models.DateTimeField(_("Modifié le"), auto_now=True)
 
     phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
     emails = models.ManyToManyField("geosys.Email", verbose_name=_("Emails"))
+
     group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
 
     class Meta:
@@ -57,10 +61,13 @@ class EnterpriseMember(models.Model):
         return self.user.username
 
 
-class Enterprise(Pro, models.Model):
+class Enterprise(Pro):
     """Model for storing agencies"""
 
     group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
+
+    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="enterprise_author", null=True, blank=True)
+    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="enterprise_maintainer", null=True, blank=True)
 
     class Meta:
         verbose_name = _("Agence")
@@ -76,8 +83,11 @@ class Enterprise(Pro, models.Model):
         self.members.add(_enterprise_member)
 
 
-class SelfEmployed(Pro, models.Model):
+class SelfEmployed(Pro):
     """Model for storing self-employed"""
+
+    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="self_employed_author", null=True, blank=True)
+    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="self_employed_maintainer", null=True, blank=True)
 
     class Meta:
         verbose_name = _("Indépendant")

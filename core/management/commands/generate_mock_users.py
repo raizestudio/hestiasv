@@ -4,6 +4,7 @@ import sys
 from typing import Any
 
 from django.core.management import BaseCommand, CommandError
+from django.utils import timezone
 
 from user.models import Role, User
 from user.tests.factories.factory_base_user import UserFactory
@@ -33,6 +34,7 @@ class Command(BaseCommand):
         for _ in range(int(number)):
             role = random.choices(Role.objects.all(), k=1)
             user = UserFactory(role=role[0])
+            user.date_joined = timezone.now() - timezone.timedelta(days=random.randint(1, 14))
             user.save()
 
         sys.stdout.write(self.style.SUCCESS(f"Successfully create {number} users.\n"))

@@ -12,7 +12,10 @@ ORDERED_MODELS = [
     "core.menuitem",
     "core.tag",
     "core.category",
+    "geosys.currency",
+    "geosys.language",
     "geosys.continent",
+    "geosys.countrydata",
     "geosys.country",
     "geosys.region",
     "geosys.department",
@@ -21,7 +24,6 @@ ORDERED_MODELS = [
     "geosys.streetlabel",
     "geosys.street",
     "geosys.addresstype",
-    "geosys.currency",
     "quotation.quotationreferencescope",
 ]
 
@@ -42,7 +44,12 @@ EXCLUDED_MODELS = [
     "menuitem",
     "tag",
     "category",
+    "currency",
+    "language",
+    "timelineaction",
+    "timeline",
     "continent",
+    "countrydata",
     "country",
     "region",
     "department",
@@ -53,7 +60,8 @@ EXCLUDED_MODELS = [
     "adressetype",
     "service",
     "asset",
-    "currency",
+    "enterprise",
+    "quotationreference",
     "quotationreferencescope",
 ]
 

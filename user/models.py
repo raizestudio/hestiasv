@@ -1,13 +1,52 @@
 import random
 import string
 
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+from core.models import SoftDelete, SoftDeleteManager
 
-class User(AbstractUser):
+
+class CUserManager(UserManager, SoftDeleteManager):
+    """Manager for User model"""
+
+    def get_queryset(self):
+        return UserQuerySet(self.model, using=self._db).filter(role_id__isnull=False)
+
+    def all_objects(self):
+        return UserQuerySet(self.model, using=self._db)
+
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError("The Email field must be set")
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+
+        return self.create_user(email, password, **extra_fields)
+
+
+class UserQuerySet(models.QuerySet):
+    """QuerySet for User model"""
+
+    def active(self):
+        return self.filter(is_active=True)
+
+
+class User(AbstractUser, SoftDelete):
     """Model for storing users"""
 
     avatar = models.ImageField(_("Avatar"), upload_to="users/avatars/", blank=True, null=True)
@@ -16,6 +55,11 @@ class User(AbstractUser):
     phone_numbers = models.ManyToManyField("geosys.PhoneNumber", related_name="user_phone_numbers", blank=True)
     addresses = models.ManyToManyField("geosys.Address", related_name="user_addresses", blank=True)
     role = models.ForeignKey("user.Role", on_delete=models.CASCADE, null=True)
+
+    user_preferences = models.OneToOneField("user.UserPreferences", on_delete=models.CASCADE, null=True)
+    user_security = models.OneToOneField("user.UserSecurity", on_delete=models.CASCADE, null=True)
+
+    objects = CUserManager()
 
     class Meta:
         verbose_name = _("Utilisateur")
@@ -45,11 +89,22 @@ class User(AbstractUser):
         self.addresses.add(address)
         self.save()
 
+    def set_user_preferences(self, user_preferences):
+        self.user_preferences = user_preferences
+        self.save()
+
+    def set_user_security(self, user_security):
+        self.user_security = user_security
+        self.save()
+
+    @staticmethod
+    def generate_temporary_username():
+        return "guest_" + "".join(random.choices(string.ascii_letters + string.digits, k=6))
+
 
 class UserPreferences(models.Model):
     """Model for storing user preferences"""
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     language = models.CharField(_("Langue"), max_length=255)
     theme = models.CharField(_("Thème"), max_length=255)
     is_public_profile = models.BooleanField(_("Profil public"), default=True)
@@ -64,8 +119,6 @@ class UserPreferences(models.Model):
 
 class UserSecurity(models.Model):
     """Model for storing user security"""
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     email_validation_code = models.CharField(_("Code de validation email"), max_length=255, blank=True, unique=True)
     email_validation_code_expires_at = models.DateTimeField(_("Code de validation email expire à"), default=timezone.now() + timezone.timedelta(minutes=30))

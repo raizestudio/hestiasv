@@ -1,0 +1,17 @@
+[
+  {
+    "model": "geosys.countrydata",
+    "pk": 1,
+    "fields": {
+      "phone_code": 351,
+      "population": 2323,
+      "area": 4,
+      "density": 23,
+      "gpd": 43,
+      "gpd_per_capita": 34,
+      "currency": "EUR",
+      "main_language": 1,
+      "languages": [1]
+    }
+  }
+]

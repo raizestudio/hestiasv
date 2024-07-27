@@ -28,20 +28,9 @@ class Command(CreateSuperUserCommand):
         super().handle(*args, **options)
 
         if password:
-            user = self.UserModel._default_manager.db_manager(database).get(username=username)
-            user.set_password(password)
-            user.set_email(email)
-            user.set_first_name("John")
-            user.set_last_name("Doe")
-            user.set_role(Role.objects.get(code="RO-ADM"))
-            user.set_address(Address.objects.get(pk=1))
-            user.set_address(Address.objects.get(pk=2))
-            user.save()
+            _user_preferences = UserPreferences.objects.get_or_create(defaults={"language": "fr", "theme": "primary"})
 
-            UserPreferences.objects.get_or_create(user=user, defaults={"language": "fr", "theme": "primary"})
-
-            UserSecurity.objects.get_or_create(
-                user=user,
+            _user_security = UserSecurity.objects.get_or_create(
                 defaults={
                     "is_phone_verified": False,
                     "is_two_factor_enabled": False,
@@ -50,6 +39,18 @@ class Command(CreateSuperUserCommand):
                     "email_validation_code_confirmed_at": timezone.now(),
                 },
             )
+
+            user = self.UserModel._default_manager.db_manager(database).all_objects().get(username=username)
+            user.set_password(password)
+            user.set_email(email)
+            user.set_first_name("John")
+            user.set_last_name("Doe")
+            user.set_role(Role.objects.get(code="RO-ADM"))
+            user.set_address(Address.objects.get(pk=1))
+            user.set_address(Address.objects.get(pk=2))
+            user.set_user_preferences(_user_preferences[0])
+            user.set_user_security(_user_security[0])
+            user.save()
 
             self.stdout.write(self.style.SUCCESS(f"Superuser {username} created successfully with the specified password."))
         else:

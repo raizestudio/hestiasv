@@ -11,6 +11,7 @@
       "slug": "societe-generale",
       "created_at": "2020-01-01T00:00:00Z",
       "updated_at": "2020-01-01T00:00:00Z",
+      "author": 1,
       "group_pro": 1
     }
   }

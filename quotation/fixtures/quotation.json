@@ -4,8 +4,13 @@
     "pk": 1,
     "fields": {
       "label": "Quotation 1",
-      "description": "Quotation description 1",
-      "quotation_references": [1]
+      "state": "draft",
+      "enterprise_accepted": 1,
+      "quotation_references": [1, 2],
+      "created_at": "2020-01-01T00:00:00Z",
+      "updated_at": "2020-01-01T00:00:00Z",
+      "author": 1,
+      "updated_by": 1
     }
   }
 ]

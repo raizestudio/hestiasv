@@ -9,6 +9,9 @@ from geosys.models import (
     Country,
     Currency,
     Department,
+    Language,
+    PhoneNumber,
+    PhoneNumberType,
     Region,
     Street,
     StreetLabel,
@@ -109,4 +112,30 @@ class CurrencySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Currency
+        fields = "__all__"
+
+
+class LanguageSerializer(serializers.ModelSerializer):
+    """Serializer for Language model"""
+
+    class Meta:
+        model = Language
+        fields = "__all__"
+
+
+class PhoneNumberTypeSerializer(serializers.ModelSerializer):
+    """Serializer for PhoneNumberType model"""
+
+    class Meta:
+        model = PhoneNumberType
+        fields = "__all__"
+
+
+class PhoneNumberSerializer(serializers.ModelSerializer):
+    """Serializer for PhoneNumber model"""
+
+    phone_number_type = PhoneNumberTypeSerializer(read_only=True, many=False)
+
+    class Meta:
+        model = PhoneNumber
         fields = "__all__"

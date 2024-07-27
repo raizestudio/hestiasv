@@ -126,7 +126,8 @@ class SessionViewSet(viewsets.ModelViewSet):
                 data["refresh"] = _refresh.refresh
                 _user.last_login = session.data["created_at"]
                 _user.save()
-                data["user"] = UserSerializer(_user).data
+                data["user"] = UserSerializer(_user, expand=["role.group", "addresses", "phone_numbers"]).data
+
                 return Response(data, status=status.HTTP_201_CREATED)
 
         return Response([token.errors, refresh.errors, session.errors], status=status.HTTP_400_BAD_REQUEST)
@@ -151,5 +152,5 @@ class SessionViewSet(viewsets.ModelViewSet):
 
         data["token"] = _token.token
         data["refresh"] = _session.refresh.refresh
-        data["user"] = UserSerializer(_session.user).data
+        data["user"] = UserSerializer(_session.user, expand=["role.group", "addresses", "phone_numbers", "user_preferences", "user_security"]).data
         return Response(data, status=status.HTTP_200_OK)

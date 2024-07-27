@@ -1,11 +1,18 @@
+import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+import environ
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-u4=2po2d3764kk1(87zqzp=yy$2c_3%g5tme%hcid@$qj@mgf7"
 
+env = environ.Env(DEBUG=(bool, False))
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+DEBUG = env("DEBUG")
+
+
 # FIXME: SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -23,6 +30,7 @@ INSTALLED_APPS = [
     "django_filters",
     "corsheaders",
     "channels",
+    "django_celery_results",
     "core",
     "history",
     "user",
@@ -68,9 +76,28 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
+    # "default": env.db()
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "hestia",
+        "USER": "hestiau",
+        "PASSWORD": "hestia",
+        "HOST": "postgres",  # This should match the service name defined in docker-compose.yml
+        "PORT": "5432",
+    }
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/0",
+        # "OPTIONS": {
+        #     "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        # },
     }
 }
 
@@ -97,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-FR"
 
 TIME_ZONE = "UTC"
 
@@ -141,7 +168,16 @@ CHANNEL_LAYERS = {
     },
 }
 
+# Email Configuration
 EMAIL_HOST = "sandbox.smtp.mailtrap.io"
 EMAIL_HOST_USER = "ceeaecd782e2f0"
 EMAIL_HOST_PASSWORD = "16c47faf6811a4"
 EMAIL_PORT = "2525"
+
+
+# Celery Configuration
+CELERY_TIMEZONE = "Europe/Paris"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_RESULT_BACKEND = "default"
+CELERY_CACHE_BACKEND = "default"

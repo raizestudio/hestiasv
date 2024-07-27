@@ -5,7 +5,7 @@
     "fields": {
       "name": "Ain",
       "iso_3166_2_code": "FR-01",
-      "insee_code": "01",
+      "local_code": "1",
       "region": 1
     }
   },
@@ -15,7 +15,7 @@
     "fields": {
       "name": "Aisne",
       "iso_3166_2_code": "FR-02",
-      "insee_code": "02",
+      "local_code": "2",
       "region": 1
     }
   },
@@ -25,7 +25,7 @@
     "fields": {
       "name": "Allier",
       "iso_3166_2_code": "FR-03",
-      "insee_code": "03",
+      "local_code": "3",
       "region": 1
     }
   },
@@ -35,7 +35,7 @@
     "fields": {
       "name": "Alpes-de-Haute-Provence",
       "iso_3166_2_code": "FR-04",
-      "insee_code": "04",
+      "local_code": "4",
       "region": 1
     }
   },
@@ -45,7 +45,7 @@
     "fields": {
       "name": "Hautes-Alpes",
       "iso_3166_2_code": "FR-05",
-      "insee_code": "05",
+      "local_code": "5",
       "region": 1
     }
   },
@@ -55,7 +55,7 @@
     "fields": {
       "name": "Alpes-Maritimes",
       "iso_3166_2_code": "FR-06",
-      "insee_code": "06",
+      "local_code": "6",
       "region": 1
     }
   },
@@ -65,7 +65,7 @@
     "fields": {
       "name": "Ardèche",
       "iso_3166_2_code": "FR-07",
-      "insee_code": "07",
+      "local_code": "7",
       "region": 1
     }
   },
@@ -75,7 +75,7 @@
     "fields": {
       "name": "Ardennes",
       "iso_3166_2_code": "FR-08",
-      "insee_code": "08",
+      "local_code": "8",
       "region": 1
     }
   },
@@ -85,7 +85,7 @@
     "fields": {
       "name": "Ariège",
       "iso_3166_2_code": "FR-09",
-      "insee_code": "09",
+      "local_code": "9",
       "region": 1
     }
   },
@@ -95,7 +95,7 @@
     "fields": {
       "name": "Aube",
       "iso_3166_2_code": "FR-10",
-      "insee_code": "10",
+      "local_code": "10",
       "region": 1
     }
   },
@@ -105,7 +105,7 @@
     "fields": {
       "name": "Aude",
       "iso_3166_2_code": "FR-11",
-      "insee_code": "11",
+      "local_code": "11",
       "region": 1
     }
   },
@@ -115,7 +115,7 @@
     "fields": {
       "name": "Aveyron",
       "iso_3166_2_code": "FR-12",
-      "insee_code": "12",
+      "local_code": "12",
       "region": 1
     }
   },
@@ -125,7 +125,7 @@
     "fields": {
       "name": "Bouches-du-Rhône",
       "iso_3166_2_code": "FR-13",
-      "insee_code": "13",
+      "local_code": "13",
       "region": 1
     }
   },
@@ -135,7 +135,7 @@
     "fields": {
       "name": "Calvados",
       "iso_3166_2_code": "FR-14",
-      "insee_code": "14",
+      "local_code": "14",
       "region": 1
     }
   },
@@ -145,7 +145,7 @@
     "fields": {
       "name": "Cantal",
       "iso_3166_2_code": "FR-15",
-      "insee_code": "15",
+      "local_code": "15",
       "region": 1
     }
   },
@@ -155,7 +155,7 @@
     "fields": {
       "name": "Charente",
       "iso_3166_2_code": "FR-16",
-      "insee_code": "16",
+      "local_code": "16",
       "region": 1
     }
   },
@@ -165,7 +165,7 @@
     "fields": {
       "name": "Charente-Maritime",
       "iso_3166_2_code": "FR-17",
-      "insee_code": "17",
+      "local_code": "17",
       "region": 1
     }
   },
@@ -175,7 +175,7 @@
     "fields": {
       "name": "Cher",
       "iso_3166_2_code": "FR-18",
-      "insee_code": "18",
+      "local_code": "18",
       "region": 1
     }
   },
@@ -185,7 +185,7 @@
     "fields": {
       "name": "Corrèze",
       "iso_3166_2_code": "FR-19",
-      "insee_code": "19",
+      "local_code": "19",
       "region": 1
     }
   },
@@ -195,7 +195,7 @@
     "fields": {
       "name": "Côte-d'Or",
       "iso_3166_2_code": "FR-21",
-      "insee_code": "21",
+      "local_code": "21",
       "region": 1
     }
   },
@@ -205,7 +205,7 @@
     "fields": {
       "name": "Côtes-d'Armor",
       "iso_3166_2_code": "FR-22",
-      "insee_code": "22",
+      "local_code": "22",
       "region": 1
     }
   },
@@ -215,7 +215,7 @@
     "fields": {
       "name": "Creuse",
       "iso_3166_2_code": "FR-23",
-      "insee_code": "23",
+      "local_code": "23",
       "region": 1
     }
   },
@@ -225,7 +225,7 @@
     "fields": {
       "name": "Dordogne",
       "iso_3166_2_code": "FR-24",
-      "insee_code": "24",
+      "local_code": "24",
       "region": 1
     }
   },
@@ -235,7 +235,7 @@
     "fields": {
       "name": "Doubs",
       "iso_3166_2_code": "FR-25",
-      "insee_code": "25",
+      "local_code": "25",
       "region": 1
     }
   },
@@ -245,7 +245,7 @@
     "fields": {
       "name": "Drôme",
       "iso_3166_2_code": "FR-26",
-      "insee_code": "26",
+      "local_code": "26",
       "region": 1
     }
   },
@@ -255,7 +255,7 @@
     "fields": {
       "name": "Eure",
       "iso_3166_2_code": "FR-27",
-      "insee_code": "27",
+      "local_code": "27",
       "region": 1
     }
   },
@@ -265,7 +265,7 @@
     "fields": {
       "name": "Eure-et-Loir",
       "iso_3166_2_code": "FR-28",
-      "insee_code": "28",
+      "local_code": "28",
       "region": 1
     }
   },
@@ -275,7 +275,7 @@
     "fields": {
       "name": "Finistère",
       "iso_3166_2_code": "FR-29",
-      "insee_code": "29",
+      "local_code": "29",
       "region": 1
     }
   },
@@ -285,7 +285,7 @@
     "fields": {
       "name": "Corse-du-Sud",
       "iso_3166_2_code": "FR-2A",
-      "insee_code": "2A",
+      "local_code": "2A",
       "region": 1
     }
   },
@@ -295,7 +295,7 @@
     "fields": {
       "name": "Haute-Corse",
       "iso_3166_2_code": "FR-2B",
-      "insee_code": "2B",
+      "local_code": "2B",
       "region": 1
     }
   },
@@ -305,7 +305,7 @@
     "fields": {
       "name": "Gard",
       "iso_3166_2_code": "FR-30",
-      "insee_code": "30",
+      "local_code": "30",
       "region": 1
     }
   },
@@ -315,7 +315,7 @@
     "fields": {
       "name": "Haute-Garonne",
       "iso_3166_2_code": "FR-31",
-      "insee_code": "31",
+      "local_code": "31",
       "region": 1
     }
   },
@@ -325,7 +325,7 @@
     "fields": {
       "name": "Gers",
       "iso_3166_2_code": "FR-32",
-      "insee_code": "32",
+      "local_code": "32",
       "region": 1
     }
   },
@@ -335,7 +335,7 @@
     "fields": {
       "name": "Gironde",
       "iso_3166_2_code": "FR-33",
-      "insee_code": "33",
+      "local_code": "33",
       "region": 1
     }
   },
@@ -345,7 +345,7 @@
     "fields": {
       "name": "Hérault",
       "iso_3166_2_code": "FR-34",
-      "insee_code": "34",
+      "local_code": "34",
       "region": 1
     }
   },
@@ -355,7 +355,7 @@
     "fields": {
       "name": "Ille-et-Vilaine",
       "iso_3166_2_code": "FR-35",
-      "insee_code": "35",
+      "local_code": "35",
       "region": 1
     }
   },
@@ -365,7 +365,7 @@
     "fields": {
       "name": "Indre",
       "iso_3166_2_code": "FR-36",
-      "insee_code": "36",
+      "local_code": "36",
       "region": 1
     }
   },
@@ -375,7 +375,7 @@
     "fields": {
       "name": "Indre-et-Loire",
       "iso_3166_2_code": "FR-37",
-      "insee_code": "37",
+      "local_code": "37",
       "region": 1
     }
   },
@@ -385,7 +385,7 @@
     "fields": {
       "name": "Isère",
       "iso_3166_2_code": "FR-38",
-      "insee_code": "38",
+      "local_code": "38",
       "region": 1
     }
   },
@@ -395,7 +395,7 @@
     "fields": {
       "name": "Jura",
       "iso_3166_2_code": "FR-39",
-      "insee_code": "39",
+      "local_code": "39",
       "region": 1
     }
   },
@@ -405,7 +405,7 @@
     "fields": {
       "name": "Landes",
       "iso_3166_2_code": "FR-40",
-      "insee_code": "40",
+      "local_code": "40",
       "region": 1
     }
   },
@@ -415,7 +415,7 @@
     "fields": {
       "name": "Loir-et-Cher",
       "iso_3166_2_code": "FR-41",
-      "insee_code": "41",
+      "local_code": "41",
       "region": 1
     }
   },
@@ -425,7 +425,7 @@
     "fields": {
       "name": "Loire",
       "iso_3166_2_code": "FR-42",
-      "insee_code": "42",
+      "local_code": "42",
       "region": 1
     }
   },
@@ -435,7 +435,7 @@
     "fields": {
       "name": "Haute-Loire",
       "iso_3166_2_code": "FR-43",
-      "insee_code": "43",
+      "local_code": "43",
       "region": 1
     }
   },
@@ -445,7 +445,7 @@
     "fields": {
       "name": "Loire-Atlantique",
       "iso_3166_2_code": "FR-44",
-      "insee_code": "44",
+      "local_code": "44",
       "region": 1
     }
   },
@@ -455,7 +455,7 @@
     "fields": {
       "name": "Loiret",
       "iso_3166_2_code": "FR-45",
-      "insee_code": "45",
+      "local_code": "45",
       "region": 1
     }
   },
@@ -465,7 +465,7 @@
     "fields": {
       "name": "Lot",
       "iso_3166_2_code": "FR-46",
-      "insee_code": "46",
+      "local_code": "46",
       "region": 1
     }
   },
@@ -475,7 +475,7 @@
     "fields": {
       "name": "Lot-et-Garonne",
       "iso_3166_2_code": "FR-47",
-      "insee_code": "47",
+      "local_code": "47",
       "region": 1
     }
   },
@@ -485,7 +485,7 @@
     "fields": {
       "name": "Lozère",
       "iso_3166_2_code": "FR-48",
-      "insee_code": "48",
+      "local_code": "48",
       "region": 1
     }
   },
@@ -495,7 +495,7 @@
     "fields": {
       "name": "Maine-et-Loire",
       "iso_3166_2_code": "FR-49",
-      "insee_code": "49",
+      "local_code": "49",
       "region": 1
     }
   },
@@ -505,7 +505,7 @@
     "fields": {
       "name": "Manche",
       "iso_3166_2_code": "FR-50",
-      "insee_code": "50",
+      "local_code": "50",
       "region": 1
     }
   },
@@ -515,7 +515,7 @@
     "fields": {
       "name": "Marne",
       "iso_3166_2_code": "FR-51",
-      "insee_code": "51",
+      "local_code": "51",
       "region": 1
     }
   },
@@ -525,7 +525,7 @@
     "fields": {
       "name": "Haute-Marne",
       "iso_3166_2_code": "FR-52",
-      "insee_code": "52",
+      "local_code": "52",
       "region": 1
     }
   },
@@ -535,7 +535,7 @@
     "fields": {
       "name": "Mayenne",
       "iso_3166_2_code": "FR-53",
-      "insee_code": "53",
+      "local_code": "53",
       "region": 1
     }
   },
@@ -545,7 +545,7 @@
     "fields": {
       "name": "Meurthe-et-Moselle",
       "iso_3166_2_code": "FR-54",
-      "insee_code": "54",
+      "local_code": "54",
       "region": 1
     }
   },
@@ -555,7 +555,7 @@
     "fields": {
       "name": "Meuse",
       "iso_3166_2_code": "FR-55",
-      "insee_code": "55",
+      "local_code": "55",
       "region": 1
     }
   },
@@ -565,7 +565,7 @@
     "fields": {
       "name": "Morbihan",
       "iso_3166_2_code": "FR-56",
-      "insee_code": "56",
+      "local_code": "56",
       "region": 1
     }
   },
@@ -575,7 +575,7 @@
     "fields": {
       "name": "Moselle",
       "iso_3166_2_code": "FR-57",
-      "insee_code": "57",
+      "local_code": "57",
       "region": 1
     }
   },
@@ -585,7 +585,7 @@
     "fields": {
       "name": "Nièvre",
       "iso_3166_2_code": "FR-58",
-      "insee_code": "58",
+      "local_code": "58",
       "region": 1
     }
   },
@@ -595,7 +595,7 @@
     "fields": {
       "name": "Nord",
       "iso_3166_2_code": "FR-59",
-      "insee_code": "59",
+      "local_code": "59",
       "region": 1
     }
   },
@@ -605,7 +605,7 @@
     "fields": {
       "name": "Oise",
       "iso_3166_2_code": "FR-60",
-      "insee_code": "60",
+      "local_code": "60",
       "region": 1
     }
   },
@@ -615,7 +615,7 @@
     "fields": {
       "name": "Orne",
       "iso_3166_2_code": "FR-61",
-      "insee_code": "61",
+      "local_code": "61",
       "region": 1
     }
   },
@@ -625,7 +625,7 @@
     "fields": {
       "name": "Pas-de-Calais",
       "iso_3166_2_code": "FR-62",
-      "insee_code": "62",
+      "local_code": "62",
       "region": 1
     }
   },
@@ -635,7 +635,7 @@
     "fields": {
       "name": "Puy-de-Dôme",
       "iso_3166_2_code": "FR-63",
-      "insee_code": "63",
+      "local_code": "63",
       "region": 1
     }
   },
@@ -645,7 +645,7 @@
     "fields": {
       "name": "Pyrénées-Atlantiques",
       "iso_3166_2_code": "FR-64",
-      "insee_code": "64",
+      "local_code": "64",
       "region": 1
     }
   },
@@ -655,7 +655,7 @@
     "fields": {
       "name": "Hautes-Pyrénées",
       "iso_3166_2_code": "FR-65",
-      "insee_code": "65",
+      "local_code": "65",
       "region": 1
     }
   },
@@ -665,7 +665,7 @@
     "fields": {
       "name": "Pyrénées-Orientales",
       "iso_3166_2_code": "FR-66",
-      "insee_code": "66",
+      "local_code": "66",
       "region": 1
     }
   },
@@ -675,7 +675,7 @@
     "fields": {
       "name": "Bas-Rhin",
       "iso_3166_2_code": "FR-67",
-      "insee_code": "67",
+      "local_code": "67",
       "region": 1
     }
   },
@@ -685,7 +685,7 @@
     "fields": {
       "name": "Haut-Rhin",
       "iso_3166_2_code": "FR-68",
-      "insee_code": "68",
+      "local_code": "68",
       "region": 1
     }
   },
@@ -695,7 +695,7 @@
     "fields": {
       "name": "Rhône",
       "iso_3166_2_code": "FR-69",
-      "insee_code": "69",
+      "local_code": "69",
       "region": 1
     }
   },
@@ -705,7 +705,7 @@
     "fields": {
       "name": "Haute-Saône",
       "iso_3166_2_code": "FR-70",
-      "insee_code": "70",
+      "local_code": "70",
       "region": 1
     }
   },
@@ -715,7 +715,7 @@
     "fields": {
       "name": "Saône-et-Loire",
       "iso_3166_2_code": "FR-71",
-      "insee_code": "71",
+      "local_code": "71",
       "region": 1
     }
   },
@@ -725,7 +725,7 @@
     "fields": {
       "name": "Sarthe",
       "iso_3166_2_code": "FR-72",
-      "insee_code": "72",
+      "local_code": "72",
       "region": 1
     }
   }
