@@ -84,10 +84,10 @@ DATABASES = {
     # "default": env.db()
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "hestia",
-        "USER": "hestiau",
-        "PASSWORD": "hestia",
-        "HOST": "localhost",  # This should match the service name defined in docker-compose.yml
+        "NAME": env("DB_NAME"),
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
+        "HOST": env("DB_HOST"),  # This should match the service name defined in docker-compose.yml
         "PORT": "5432",
     }
 }
