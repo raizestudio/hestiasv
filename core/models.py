@@ -128,8 +128,20 @@ class SoftDelete(models.Model):
 
     deleted_at = models.DateTimeField(blank=True, null=True)
     restored_at = models.DateTimeField(blank=True, null=True)
-    deleted_by = models.ForeignKey("user.User", on_delete=models.SET_NULL, related_name="%(class)s_deleted_by", blank=True, null=True)
-    restored_by = models.ForeignKey("user.User", on_delete=models.SET_NULL, related_name="%(class)s_restored_by", blank=True, null=True)
+    deleted_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.SET_NULL,
+        related_name="%(class)s_deleted_by",
+        blank=True,
+        null=True,
+    )
+    restored_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.SET_NULL,
+        related_name="%(class)s_restored_by",
+        blank=True,
+        null=True,
+    )
 
     objects = SoftDeleteManager()
 
@@ -278,7 +290,10 @@ class SoftDelete(models.Model):
             if related_object:
                 related_manager_name = related_query_name if hasattr(self, related_query_name) else f"{related_query_name}_set"
                 protected_objects = list(getattr(self, related_manager_name).all())
-                raise ProtectedError(f"Cannot delete {self} because {related_object} is related with PROTECT", protected_objects=protected_objects)
+                raise ProtectedError(
+                    f"Cannot delete {self} because {related_object} is related with PROTECT",
+                    protected_objects=protected_objects,
+                )
         elif on_delete == models.SET_DEFAULT:
             default_value = field.get_default()
             setattr(related_object, field.remote_field.name, default_value)
@@ -292,7 +307,10 @@ class SoftDelete(models.Model):
             pass  # Ne rien faire explicitement
         elif on_delete == models.RESTRICT:
             if related_object:
-                raise ProtectedError(f"Cannot delete {self} because {related_object} is related with RESTRICT", [related_object])
+                raise ProtectedError(
+                    f"Cannot delete {self} because {related_object} is related with RESTRICT",
+                    [related_object],
+                )
         else:  # M2M
             related_object.delete(strict=strict, *args, **kwargs)
         try:

@@ -18,7 +18,10 @@ class QuotationSerializer(FlexFieldsModelSerializer):
             "updated_by": UserSerializer,
             "enterprise_accepted": EnterpriseSerializer,
             "self_employed_accepted": SelfEmployedSerializer,
-            "quotation_references": ("quotation.serializers.QuotationReferenceSerializer", {"many": True}),
+            "quotation_references": (
+                "quotation.serializers.QuotationReferenceSerializer",
+                {"many": True},
+            ),
         }
         read_only_fields = ["created_at", "author"]
 

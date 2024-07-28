@@ -32,7 +32,7 @@ USERS = [
         "is_staff": True,
         "first_name": "Jadmin",
         "last_name": "Doe",
-        "role": "RO-ADM"
+        "role": "RO-ADM",
     },
     {
         "username": "manager",
@@ -42,7 +42,7 @@ USERS = [
         "is_staff": True,
         "first_name": "Manage",
         "last_name": "Doe",
-        "role": "RO-MNG"
+        "role": "RO-MNG",
     },
     {
         "username": "user",
@@ -52,7 +52,7 @@ USERS = [
         "is_staff": False,
         "first_name": "Juser",
         "last_name": "Doe",
-        "role": "RO-USR"
+        "role": "RO-USR",
     },
     {
         "username": "agencydirector",
@@ -62,7 +62,7 @@ USERS = [
         "is_staff": False,
         "first_name": "Director",
         "last_name": "Doe",
-        "role": "RO-DRC"
+        "role": "RO-DRC",
     },
     {
         "username": "agencymanager",
@@ -72,7 +72,7 @@ USERS = [
         "is_staff": False,
         "first_name": "Manager",
         "last_name": "Doe",
-        "role": "RO-MAN"
+        "role": "RO-MAN",
     },
     {
         "username": "agencyemployee",
@@ -82,8 +82,8 @@ USERS = [
         "is_staff": False,
         "first_name": "Employee",
         "last_name": "Doe",
-        "role": "RO-EMP"
-    }
+        "role": "RO-EMP",
+    },
 ]
 
 
@@ -101,7 +101,7 @@ class Command(BaseCommand):
             _user = User.objects.filter(username=user["username"]).first()
             if _user:
                 _user.delete()
-                
+
             _user = User.objects.create_user(
                 username=user["username"],
                 password=user["password"],
@@ -111,8 +111,8 @@ class Command(BaseCommand):
                 first_name=user["first_name"],
                 last_name=user["last_name"],
             )
-            
+
             _user.role = Role.objects.get(code=user["role"])
             _user.save()
-            
-            sys.stdout.write(self.style.SUCCESS(f"Successfully create {user["username"]}.\n"))
+
+            # sys.stdout.write(self.style.SUCCESS(f"Successfully create {user["username"]}.\n"))

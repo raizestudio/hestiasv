@@ -9,7 +9,6 @@ pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
 class TestUsers:
-
     def test_user_creation(self):
         """Test user creation"""
         user = UserFactory(username="test_user")

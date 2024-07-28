@@ -3,9 +3,18 @@ from rest_access_policy import AccessPolicy
 
 class EnterpriseAccessPolicy(AccessPolicy):
     statements = [
-        {"action": ["list"], "principal": "*", "effect": "allow", "condition": "is_admin"},
+        {
+            "action": ["list"],
+            "principal": "*",
+            "effect": "allow",
+            "condition": "is_admin",
+        },
         {"action": ["create"], "principal": "*", "effect": "allow"},
-        {"action": ["retrieve", "update", "partial_update"], "principal": "*", "effect": "allow"},
+        {
+            "action": ["retrieve", "update", "partial_update"],
+            "principal": "*",
+            "effect": "allow",
+        },
         {"action": ["destroy"], "principal": "*", "effect": "allow"},
     ]
 

@@ -28,10 +28,27 @@ class Asset(History, SoftDelete):
     slug = models.SlugField(_("Slug"), unique=True)
 
     tags = models.ManyToManyField(Tag, verbose_name=_("Tags"), blank=True, related_name="asset_tags")
-    categories = models.ManyToManyField(Category, verbose_name=_("Categories"), blank=True, related_name="asset_categories")
+    categories = models.ManyToManyField(
+        Category,
+        verbose_name=_("Categories"),
+        blank=True,
+        related_name="asset_categories",
+    )
 
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="asset_author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="asset_updated", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="asset_author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="asset_updated",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Actif")

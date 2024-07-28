@@ -70,7 +70,12 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         serializer = self.get_serializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @action(detail=False, methods=["get"], url_path="email/activate/(?P<email_code>[^/.]+)", url_name="email_activate")
+    @action(
+        detail=False,
+        methods=["get"],
+        url_path="email/activate/(?P<email_code>[^/.]+)",
+        url_name="email_activate",
+    )
     def confirm_email(self, request, email_code: str, *args, **kwargs) -> Response:
         if not email_code:
             return Response({"detail": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
@@ -87,7 +92,10 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         _user_security.email_validation_code_confirmed_at = timezone.now()
         _user = _user_security.user
 
-        return Response({"detail": "User confirmed", "user": UserSerializer(_user).data}, status=status.HTTP_200_OK)
+        return Response(
+            {"detail": "User confirmed", "user": UserSerializer(_user).data},
+            status=status.HTTP_200_OK,
+        )
 
     @action(detail=False, methods=["post"], url_path="email", url_name="email")
     def create_from_email(self, request, *args, **kwargs) -> Response:
@@ -97,9 +105,17 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
 
         _user = User.objects.create(username=User.generate_temporary_username(), email=email, is_active=False)
         email_code = UserSecurity.generate_email_validation_code()
-        _user_security = UserSecurity.objects.create(user=_user, email_validation_code=email_code, email_validation_code_sent_at=timezone.now())
+        _user_security = UserSecurity.objects.create(
+            user=_user,
+            email_validation_code=email_code,
+            email_validation_code_sent_at=timezone.now(),
+        )
 
-        subject, from_email, to = "Votre inscription Hestia!", "no-reply@hestia.com", [email]
+        subject, from_email, to = (
+            "Votre inscription Hestia!",
+            "no-reply@hestia.com",
+            [email],
+        )
         # activation_link = request.build_absolute_uri(f"users/email/activate/{email_code}")
         activation_link = f"http://localhost:3000/user/activate/{email_code}"
         text_content = f"Validez votre inscription en cliquant sur le lien suivant: {activation_link}"
@@ -108,9 +124,17 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         msg.attach_alternative(html_content, "text/html")
         msg.send()
         # send_mail("Votre compte en quelques minutes.", f"Validez votre inscription en cliquant sur le lien suivant: {activation_link} ", "no-reply@hestia.com", [email])
-        return Response({"detail": "User created", "user": UserSerializer(_user).data}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"detail": "User created", "user": UserSerializer(_user).data},
+            status=status.HTTP_201_CREATED,
+        )
 
-    @action(detail=False, methods=["get"], url_path="retrieve-dashboard", url_name="retrieve_dashboard")
+    @action(
+        detail=False,
+        methods=["get"],
+        url_path="retrieve-dashboard",
+        url_name="retrieve_dashboard",
+    )
     def retrieve_dashboard(self, request, *args, **kwargs) -> Response:
         user = request.user
 
@@ -150,7 +174,10 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
 
         user.avatar = avatar
         user.save()
-        return Response({"detail": "Avatar uploaded", "user": UserSerializer(user).data}, status=status.HTTP_200_OK)
+        return Response(
+            {"detail": "Avatar uploaded", "user": UserSerializer(user).data},
+            status=status.HTTP_200_OK,
+        )
 
 
 class GroupViewSet(viewsets.ModelViewSet):

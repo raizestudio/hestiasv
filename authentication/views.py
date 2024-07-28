@@ -116,7 +116,12 @@ class SessionViewSet(viewsets.ModelViewSet):
                 return Response([token.errors, refresh.errors], status=status.HTTP_400_BAD_REQUEST)
 
             _session = Session.generate_session()
-            data = {"session": _session, "user": _user.id, "token": _token.id, "refresh": _refresh.id}
+            data = {
+                "session": _session,
+                "user": _user.id,
+                "token": _token.id,
+                "refresh": _refresh.id,
+            }
             session = SessionSerializer(data=data)
 
             if session.is_valid():
@@ -130,7 +135,10 @@ class SessionViewSet(viewsets.ModelViewSet):
 
                 return Response(data, status=status.HTTP_201_CREATED)
 
-        return Response([token.errors, refresh.errors, session.errors], status=status.HTTP_400_BAD_REQUEST)
+        return Response(
+            [token.errors, refresh.errors, session.errors],
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
     @action(detail=False, methods=["post"], url_path="retrieve-from-token")
     def retrieve_from_token(self, request, *args, **kwargs):
@@ -148,9 +156,23 @@ class SessionViewSet(viewsets.ModelViewSet):
         if not _session:
             return Response({"message": "Session not found"}, status=status.HTTP_404_NOT_FOUND)
 
-        data = {"session": _session.session, "user": _session.user, "token": _token.token, "refresh": _session.refresh.refresh}
+        data = {
+            "session": _session.session,
+            "user": _session.user,
+            "token": _token.token,
+            "refresh": _session.refresh.refresh,
+        }
 
         data["token"] = _token.token
         data["refresh"] = _session.refresh.refresh
-        data["user"] = UserSerializer(_session.user, expand=["role.group", "addresses", "phone_numbers", "user_preferences", "user_security"]).data
+        data["user"] = UserSerializer(
+            _session.user,
+            expand=[
+                "role.group",
+                "addresses",
+                "phone_numbers",
+                "user_preferences",
+                "user_security",
+            ],
+        ).data
         return Response(data, status=status.HTTP_200_OK)

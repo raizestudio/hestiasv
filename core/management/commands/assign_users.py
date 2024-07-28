@@ -20,7 +20,10 @@ class Command(BaseCommand):
 
         for _user in _users:
             if _user.role.group.code == "GR-AGY":
-                enterprise_member = EnterpriseMemberFactory(user=_user, enterprise=random.choices(Enterprise.objects.all(), k=1)[0])
+                enterprise_member = EnterpriseMemberFactory(
+                    user=_user,
+                    enterprise=random.choices(Enterprise.objects.all(), k=1)[0],
+                )
                 enterprise_member.save()
 
             # elif _user.role.name == "RO-SEL":

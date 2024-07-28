@@ -8,7 +8,6 @@ pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
 class TestUsers:
-
     def test_group_creation(self):
         """Test group creation"""
         role = RoleFactory()

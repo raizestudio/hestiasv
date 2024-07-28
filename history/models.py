@@ -9,8 +9,20 @@ class History(models.Model):
 
     created_at = models.DateTimeField(_("Créé à"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Mis à jour à"), auto_now=True)
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="updated", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="updated",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         abstract = True

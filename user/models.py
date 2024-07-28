@@ -121,7 +121,10 @@ class UserSecurity(models.Model):
     """Model for storing user security"""
 
     email_validation_code = models.CharField(_("Code de validation email"), max_length=255, blank=True, unique=True)
-    email_validation_code_expires_at = models.DateTimeField(_("Code de validation email expire à"), default=timezone.now() + timezone.timedelta(minutes=30))
+    email_validation_code_expires_at = models.DateTimeField(
+        _("Code de validation email expire à"),
+        default=timezone.now() + timezone.timedelta(minutes=30),
+    )
     email_validation_code_sent_at = models.DateTimeField(_("Code de validation email envoyé à"))
     email_validation_code_confirmed_at = models.DateTimeField(_("Code de validation email expire à"), blank=True, null=True)
     is_phone_verified = models.BooleanField(_("Téléphone vérifié"), default=False)

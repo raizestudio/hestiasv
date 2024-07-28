@@ -9,7 +9,6 @@ pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
 class TestUsers:
-
     def test_menu_item_creation(self):
         """Test menu item creation"""
         menu_item = MenuItemFactory()

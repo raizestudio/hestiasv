@@ -16,9 +16,21 @@ class ServiceViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
     serializer_class = ServiceSerializer
     access_policy = ServiceAccessPolicy
     pagination_class = DefaultPageNumberPagination
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filter_backends = [
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    ]
     # filterset_fields = ["name"]
-    ordering_fields = ["id", "created_at", "updated_at", "name", "description", "author", "updated_by"]
+    ordering_fields = [
+        "id",
+        "created_at",
+        "updated_at",
+        "name",
+        "description",
+        "author",
+        "updated_by",
+    ]
     search_fields = ["name"]
 
     def get_serializer_context(self):

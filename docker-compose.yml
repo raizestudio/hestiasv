@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    
+
     ports:
       - 8000:8000
     depends_on:
@@ -15,7 +15,7 @@ services:
     #   - DB_SERVICE_HOST=db
     networks:
       - djangonetwork
-  
+
 
 
   postgres:
@@ -39,7 +39,7 @@ services:
       POSTGRES_PASSWORD: hestia
       POSTGRES_USER: hestiau
       POSTGRES_DB: hestia
-      
+
     ports:
       - 5432:5432
     networks:

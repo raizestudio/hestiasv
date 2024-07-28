@@ -26,7 +26,6 @@ class GroupSerializer(FlexFieldsModelSerializer):
 
 
 class RoleSerializer(FlexFieldsModelSerializer):
-
     class Meta:
         model = Role
         fields = "__all__"

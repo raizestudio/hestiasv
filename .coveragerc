@@ -7,7 +7,7 @@ omit =
   **/tests/**
   **/admin.py
   **/asgi.py
- 
+
 
 [report]
 exclude_lines =

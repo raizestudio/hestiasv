@@ -21,7 +21,12 @@ class Pro(History, SoftDelete):
     phone_numbers = models.ManyToManyField("geosys.PhoneNumber", verbose_name=_("Numéros de téléphone"))
     emails = models.ManyToManyField("geosys.Email", verbose_name=_("Emails"))
 
-    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
+    group_pro = models.ForeignKey(
+        "pro.GroupPro",
+        verbose_name=_("Groupe pro"),
+        on_delete=models.CASCADE,
+        null=True,
+    )
 
     class Meta:
         abstract = True
@@ -51,7 +56,12 @@ class EnterpriseMember(models.Model):
     position = models.CharField(_("Rôle"), max_length=255)
 
     date_joined = models.DateTimeField(_("Date de création"), auto_now_add=True)
-    enterprise = models.ForeignKey("pro.Enterprise", verbose_name=_("Agence"), on_delete=models.CASCADE, related_name="members")
+    enterprise = models.ForeignKey(
+        "pro.Enterprise",
+        verbose_name=_("Agence"),
+        on_delete=models.CASCADE,
+        related_name="members",
+    )
 
     class Meta:
         verbose_name = _("Utilisateur d'agence")
@@ -64,10 +74,27 @@ class EnterpriseMember(models.Model):
 class Enterprise(Pro):
     """Model for storing agencies"""
 
-    group_pro = models.ForeignKey("pro.GroupPro", verbose_name=_("Groupe pro"), on_delete=models.CASCADE, null=True)
+    group_pro = models.ForeignKey(
+        "pro.GroupPro",
+        verbose_name=_("Groupe pro"),
+        on_delete=models.CASCADE,
+        null=True,
+    )
 
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="enterprise_author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="enterprise_maintainer", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="enterprise_author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="enterprise_maintainer",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Agence")
@@ -86,8 +113,20 @@ class Enterprise(Pro):
 class SelfEmployed(Pro):
     """Model for storing self-employed"""
 
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="self_employed_author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="self_employed_maintainer", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="self_employed_author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="self_employed_maintainer",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Indépendant")

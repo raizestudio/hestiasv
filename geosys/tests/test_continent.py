@@ -9,7 +9,6 @@ pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
 class TestContinents:
-
     def test_continent_creation(self):
         """Test continent creation"""
         continent = ContinentFactory()

@@ -166,9 +166,9 @@ Table core.history {
 Table notification.notification {
   id int [pk]
 
-  recipient varchar(36) 
+  recipient varchar(36)
 
-  trigger_content_id int 
+  trigger_content_id int
   trigger_id int
   trigger GenericForeignKey
 

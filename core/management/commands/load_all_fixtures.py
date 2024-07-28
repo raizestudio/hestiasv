@@ -103,7 +103,6 @@ class Command(BaseCommand):
             self.load_fixtures_for_model(apps.get_model(f"{_m['app_label']}.{_m['model']}"))
 
     def load_fixtures_for_model(self, model):
-
         model_name = model.__name__.lower()
         try:
             call_command("loaddata", model_name)

@@ -8,7 +8,6 @@ pytestmark = pytest.mark.django_db
 
 @pytest.mark.django_db
 class TestUsers:
-
     def test_service_creation(self):
         """Test asset creation"""
         asset = EnterpriseFactory()

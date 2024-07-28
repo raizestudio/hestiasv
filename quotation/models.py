@@ -12,10 +12,12 @@ from service.models import Service
 
 
 class Quotation(History, SoftDelete):
-
     STATE_OPTIONS = [
         ("draft", _("Draft")),
-        ("awaiting", _("Awaiting")),  # Awaiting agency or self-employed to accept the quotation
+        (
+            "awaiting",
+            _("Awaiting"),
+        ),  # Awaiting agency or self-employed to accept the quotation
         ("halted", _("Halted")),  # Quotation is halted by admin or staff
         ("open", _("Open")),
         ("closed", _("Closed")),
@@ -26,11 +28,35 @@ class Quotation(History, SoftDelete):
     state = models.CharField(max_length=255)
     quotation_references = models.ManyToManyField("QuotationReference", verbose_name=_("Quotation References"))
 
-    enterprise_accepted = models.ForeignKey("pro.Enterprise", on_delete=models.CASCADE, related_name="accepted_quotations", null=True, blank=True)
-    self_employed_accepted = models.ForeignKey("pro.SelfEmployed", on_delete=models.CASCADE, related_name="accepted_quotations", null=True, blank=True)
+    enterprise_accepted = models.ForeignKey(
+        "pro.Enterprise",
+        on_delete=models.CASCADE,
+        related_name="accepted_quotations",
+        null=True,
+        blank=True,
+    )
+    self_employed_accepted = models.ForeignKey(
+        "pro.SelfEmployed",
+        on_delete=models.CASCADE,
+        related_name="accepted_quotations",
+        null=True,
+        blank=True,
+    )
 
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_maintainer", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="quotation_author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="quotation_maintainer",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Quotation")
@@ -46,7 +72,6 @@ class Quotation(History, SoftDelete):
 
 
 class QuotationReferenceScope(models.Model):
-
     continent = models.ManyToManyField(
         "geosys.Continent",
     )
@@ -70,16 +95,32 @@ class QuotationReferenceScope(models.Model):
 
 
 class QuotationReference(History, Price, SoftDelete):
-
     label = models.CharField(max_length=255)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE, null=True)
     is_active = models.BooleanField(default=True)
 
-    quotation_reference_scope = models.ForeignKey(QuotationReferenceScope, on_delete=models.CASCADE, null=True, related_name="scope")
+    quotation_reference_scope = models.ForeignKey(
+        QuotationReferenceScope,
+        on_delete=models.CASCADE,
+        null=True,
+        related_name="scope",
+    )
 
-    author = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_reference_author", null=True, blank=True)
-    updated_by = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="quotation_reference_maintainer", null=True, blank=True)
+    author = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="quotation_reference_author",
+        null=True,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        "user.User",
+        on_delete=models.CASCADE,
+        related_name="quotation_reference_maintainer",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Quotation Reference")
