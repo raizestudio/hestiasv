@@ -10,15 +10,11 @@ repos:
     hooks:
       - id: black
         language_version: python3.12
-# -   repo: local
-#     hooks:
-#       - id: pytest
-#         name: Run tests
-#         entry: pytest
-#         language: python
-#         types: [python]
-# env:
-#     DB_HOST: localhost
-#     DB_USER: hestiau
-#     DB_PASSWORD: hestia
-#     DB_NAME: hestia
+-   repo: local
+    hooks:
+      - id: coverage run -m pytest
+        name: Run tests
+        stages: [post-commit]
+        entry: pytest
+        language: python
+        types: [python]

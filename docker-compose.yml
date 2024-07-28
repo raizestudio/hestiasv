@@ -11,8 +11,13 @@ services:
     command: bash -c "python manage.py install && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-    # environment:
-    #   - DB_SERVICE_HOST=db
+    environment:
+      - DB_HOST=postgres
+      - DB_NAME=hestia
+      - DB_USER=hestiau
+      - DB_PASSWORD=hestia
+      - DB_PORT=5432
+
     networks:
       - djangonetwork
 

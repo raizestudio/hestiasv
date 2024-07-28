@@ -13,4 +13,4 @@ def get_elk_client():
 
 
 # Test the connection
-print(get_elk_client().info())
+# print(get_elk_client().info())
