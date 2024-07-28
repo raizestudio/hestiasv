@@ -1,4 +1,5 @@
 from django.core.mail import EmailMultiAlternatives, send_mail
+from django.db import transaction
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.utils import timezone
@@ -19,6 +20,7 @@ from user.serializers import (
     UserSecuritySerializer,
     UserSerializer,
 )
+from user.tasks import send_activation_email
 
 
 class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
@@ -90,10 +92,10 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
             return Response({"detail": "The code has expired"}, status=status.HTTP_400_BAD_REQUEST)
 
         _user_security.email_validation_code_confirmed_at = timezone.now()
-        _user = _user_security.user
+        _user = User.objects.all_objects().get(user_security=_user_security.pk)
 
         return Response(
-            {"detail": "User confirmed", "user": UserSerializer(_user).data},
+            {"detail": "User confirmed", "user": UserSerializer(_user, expand=["user_security"]).data},
             status=status.HTTP_200_OK,
         )
 
@@ -103,29 +105,18 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
         if not email:
             return Response({"detail": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        _user = User.objects.create(username=User.generate_temporary_username(), email=email, is_active=False)
-        email_code = UserSecurity.generate_email_validation_code()
-        _user_security = UserSecurity.objects.create(
-            user=_user,
-            email_validation_code=email_code,
-            email_validation_code_sent_at=timezone.now(),
-        )
+        with transaction.atomic():
+            email_code = UserSecurity.generate_email_validation_code()
+            _user_security = UserSecurity.objects.create(
+                email_validation_code=email_code,
+                email_validation_code_sent_at=timezone.now(),
+                email_validation_code_expires_at=timezone.now() + timezone.timedelta(days=1),
+            )
+            _user = User.objects.create(username=User.generate_temporary_username(), email=email, is_active=False, user_security=_user_security)
+            send_activation_email.delay_on_commit(email, email_code)
 
-        subject, from_email, to = (
-            "Votre inscription Hestia!",
-            "no-reply@hestia.com",
-            [email],
-        )
-        # activation_link = request.build_absolute_uri(f"users/email/activate/{email_code}")
-        activation_link = f"http://localhost:3000/user/activate/{email_code}"
-        text_content = f"Validez votre inscription en cliquant sur le lien suivant: {activation_link}"
-        html_content = render_to_string("mail/activate_email.html", {"activation_link": activation_link})
-        msg = EmailMultiAlternatives(subject, text_content, from_email, to)
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
-        # send_mail("Votre compte en quelques minutes.", f"Validez votre inscription en cliquant sur le lien suivant: {activation_link} ", "no-reply@hestia.com", [email])
         return Response(
-            {"detail": "User created", "user": UserSerializer(_user).data},
+            {"detail": "User created", "user": UserSerializer(_user, expand=["user_security"]).data},
             status=status.HTTP_201_CREATED,
         )
 
