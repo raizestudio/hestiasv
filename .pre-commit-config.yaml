@@ -18,3 +18,4 @@ repos:
         entry: pytest
         language: python
         types: [python]
+        always_run: true
