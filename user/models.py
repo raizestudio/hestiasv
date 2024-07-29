@@ -42,6 +42,10 @@ class CUserManager(UserManager, SoftDeleteManager):
 class UserQuerySet(models.QuerySet):
     """QuerySet for User model"""
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self = self.select_related("role", "user_preferences", "user_security").prefetch_related("phone_numbers", "addresses")
+
     def active(self):
         return self.filter(is_active=True)
 

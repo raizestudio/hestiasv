@@ -7,6 +7,7 @@ from core.celery import debug_task
 from core.models import AppSetting, Menu, MenuItem
 from core.policies import MenuAccessPolicy
 from core.serializers import AppSettingSerializer, MenuItemSerializer, MenuSerializer
+from core.utils import get_app_settings
 
 
 class MenuViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
@@ -54,7 +55,11 @@ class AppSettingViewSet(viewsets.ModelViewSet):
     serializer_class = AppSettingSerializer
 
     def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
+        settings = get_app_settings()
+
+        return Response(settings, status=status.HTTP_200_OK)
+
+        # return super().list(request, *args, **kwargs)
 
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)

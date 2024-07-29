@@ -32,7 +32,17 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
     lookup_field = "username"
 
     def list(self, request, *args, **kwargs) -> Response:
-        queryset = self.get_queryset()
+        objects_param = request.query_params.get("objects", None)
+
+        if objects_param == "all":
+            queryset = User.objects.all_objects()
+        elif objects_param == "deleted":
+            queryset = User.objects.deleted_objects()
+        elif objects_param == "new":
+            queryset = User.objects.all_objects().filter(role_id__isnull=True)
+        else:
+            queryset = self.get_queryset()
+
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
@@ -169,6 +179,44 @@ class UserViewSet(AccessViewSetMixin, viewsets.ModelViewSet):
             {"detail": "Avatar uploaded", "user": UserSerializer(user).data},
             status=status.HTTP_200_OK,
         )
+
+    def partial_update(self, request, *args, **kwargs):
+        objects_param = request.query_params.get("objects", None)
+
+        print(f"DEBUG objects_param: {objects_param}")
+        if objects_param == "all":
+            try:
+                username = kwargs.get("username")
+                # username = request.query_params.get("lookup")
+                print(f"DEBUG username: {username}")
+                queryset = User.objects.all_objects().get(username=username)
+
+                print(f"DEBUG queryset: {queryset}")
+                for attr, value in request.data.items():
+                    print(f"DEBUG attr: {attr} - value: {value}")
+                    if attr == "password":
+                        queryset.set_password(value)
+                        continue
+                    if attr == "role":
+                        _role = Role.objects.get(code=value)
+                        setattr(queryset, attr, _role)
+                    else:
+                        setattr(queryset, attr, value)
+                queryset.save()
+
+                return Response(
+                    {
+                        "detail": "User updated",
+                        "user": UserSerializer(queryset, expand=["user_security"]).data,
+                    },
+                    status=status.HTTP_200_OK,
+                )
+
+            except Exception as e:
+                return Response({"detail": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+                # raise ValidationError(detail=str(e))
+
+        return super().partial_update(request, *args, **kwargs)
 
 
 class GroupViewSet(viewsets.ModelViewSet):

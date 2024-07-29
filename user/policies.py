@@ -7,7 +7,6 @@ class BaseUserAccessPolicy(AccessPolicy):
             "action": ["list", "retrieve", "create", "update", "partial_update"],
             "principal": "*",
             "effect": "allow",
-            "condition": "is_admin",
         },
         {
             "action": ["list_w_term"],

@@ -1,4 +1,5 @@
 from django.contrib.contenttypes.fields import GenericRelation
+from django.core.cache import cache
 from django.db import models, transaction
 from django.db.models import ProtectedError
 from django.utils import timezone
@@ -68,6 +69,14 @@ class AppSetting(Setting):
     class Meta:
         verbose_name = _("Paramètre de l'application")
         verbose_name_plural = _("Paramètres de l'application")
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete('app_settings')
+
+    def delete(self, *args, **kwargs):
+        super().delete(*args, **kwargs)
+        cache.delete('app_settings')
 
 
 class Category(models.Model):
